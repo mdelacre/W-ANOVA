@@ -29,7 +29,6 @@ power=function(alpha){
     }
     files=ordre
 
-    ### LA PARTIE CI DESSOUS MARCHE PARFAITEMENT/ LE PROBLEME EST PLUS HAUT
     # Computing elements of power for each file 
     results=data.frame(matrix(0,length(files),9))
     colnames(results)=c("Distributions","Nb_groups","Condition","F_power","W_power","BF_power","F_power_expected","W_power_expected","BF_power_expected")
