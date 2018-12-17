@@ -90,7 +90,7 @@ power=function(alpha){
     crit_BF <- qf(1 - alpha, df1, df2_BF)
     ncp_BF <- mean_SS/(sd_BF^2)*(k-1) 
     power_BF_theo <- pf(crit_BF, df1, df2_BF, ncp = ncp_BF, lower.tail = FALSE)
-    results[i,]=c(Distributions, k, Condition,power_F,power_W_theo,power_BF,power_F_theo,power_W_theo,power_BF_theo)
+    results[i,]=c(Distributions, k, Condition,power_F,power_W,power_BF,power_F_theo,power_W_theo,power_BF_theo)
   
     #rm(list=setdiff(ls(), list("Mainfolder","subsection","results","files")))
     rm(A)
