@@ -47,9 +47,9 @@ power=function(alpha){
     colnames(results)=c("Distributions","Nb_groups","Condition","F_power","W_power","BF_power","F_power_expected","W_power_expected","BF_power_expected")
     
     # Compute the observed power of each condition (= proportion of pvalues under alpha, for each test)
-    power_F = sum(A[,1]<.05)/length(A[,1]) # proportion of pvalues under alpha, for the F-test
-    power_W = sum(A[,2]<.05)/length(A[,2]) # proportion of pvalues under alpha, for the W-test
-    power_BF = sum(A[,3]<.05)/length(A[,3])# proportion of pvalues under alpha, for the F*-test
+    power_F = sum(A[,1]<alpha)/length(A[,1]) # proportion of pvalues under alpha, for the F-test
+    power_W = sum(A[,2]<alpha)/length(A[,2]) # proportion of pvalues under alpha, for the W-test
+    power_BF = sum(A[,3]<alpha)/length(A[,3])# proportion of pvalues under alpha, for the F*-test
     
     # Compute the expected power
     
@@ -91,7 +91,7 @@ power=function(alpha){
     ncp_BF <- mean_SS/(sd_BF^2)*(k-1) 
     power_BF_theo <- pf(crit_BF, df1, df2_BF, ncp = ncp_BF, lower.tail = FALSE)
     results[i,]=c(Distributions, k, Condition,power_F,power_W,power_BF,power_F_theo,power_W_theo,power_BF_theo)
-  
+
     #rm(list=setdiff(ls(), list("Mainfolder","subsection","results","files")))
     rm(A)
       }
