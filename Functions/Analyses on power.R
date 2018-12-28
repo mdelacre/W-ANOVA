@@ -19,7 +19,7 @@ files_k3=files[grepl("k= 3",files)==TRUE]
 RECAP=NULL
 
 summary=function(K){
-  
+
   if (K==2){files=files_k2
   } else if (K==3){files=files_k3}
   
@@ -91,13 +91,13 @@ RECAP_K3=summary(K=3)
 
 # Legend
 
-plot(Xaxis,RECAP[[1]][S,4:6],bty="n",xaxt="n",,yaxt="n",ylim=c(.62,.67),main="",xlab="",ylab="averaged power",pch=19,type="o")
+plot(1:3,RECAP[[1]][1,4:6],bty="n",xaxt="n",,yaxt="n",ylim=c(.62,.67),main="",xlab="",ylab="averaged power",pch=19,type="o")
 legend("center", legend=c("Chi-square and normal Left-skewed","Chi-square and normal Righ-skewed","Double exponential","Mixed normal","Normal","Normal Right-skewed and Normal Left-skewed","Normal right-skewed"),
        lty=1:7,pch=1:7,cex=1.1)
 
+graphs=function(K,power_type){
 
-graphs=function(K){
-  
+    # power_type = "observed" if observed power; "consistency" if [O-E]/E
 if (K==2){RECAP=RECAP_K2
 } else if (K==3){RECAP=RECAP_K3}
 
@@ -134,27 +134,49 @@ for (S in 1:length(subcategory)){
           n="negative correlation between n and mean"}      
     }
 
-  Title = paste0("Averaged power of 3 tests: ","\n",categ,"\n",n)
-    
+  if (power_type=="observed"){Title = paste0("Averaged power of 3 tests: ","\n",categ,"\n",n)
+  } else if (power_type=="consistency"){Title = paste0("Averaged consistency of 3 tests: (O-E)/E","\n",categ,"\n",n)}
+  
   par(xpd=FALSE,mar=c(3,3,4,1))  
   pow=NULL
-  for (j in 1:length(RECAP)){
-    pow=c(pow,RECAP[[j]][S,4:6])
-    pow=unlist(pow)
+  if (power_type=="observed"){
+    for (j in 1:length(RECAP)){
+      pow=c(pow,RECAP[[j]][S,4:6])
+      pow=unlist(pow)
+    }
+    YMIN=min(pow)
+    YMAX=max(pow)
+  } else if (power_type=="consistency"){
+    for (j in 1:length(RECAP)){
+      pow=c(pow,RECAP[[j]][S,7:9])
+      pow=unlist(pow)
+    }
+    YMIN=min(pow)
+    YMAX=max(pow)
   }
-  YMIN=min(pow)
-  YMAX=max(pow)
   
-  #png(paste0(subcategory[S],",K=",K,".png"), width=480, height=480)
-  plot(Xaxis,RECAP[[1]][S,4:6],bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,xlab="",ylab="averaged power",pch=19,type="o")
-  axis(side=1,1:3,c("F-test","W-test","F*-test"))
-  for (j in 1:length(RECAP)){ 
-    lines(Xaxis,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged power of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)
-     }
-  #dev.off()
-     }
+  if (power_type=="observed"){
+    #png(file = paste0("Observed power, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
+    plot(1:3,RECAP[[1]][S,4:6],bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,xlab="",ylab="averaged power",pch=19,type="o")
+    axis(side=1,1:3,c("F-test","W-test","F*-test"))
+    for (j in 1:length(RECAP)){ 
+    lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged power of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
+    #dev.off()
+  } else if (power_type=="consistency"){
+    #png(file = paste0("Power consistency, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
+    plot(1:3,RECAP[[1]][S,7:9],bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,xlab="",ylab="averaged power",pch=19,type="o")
+    axis(side=1,1:3,c("F-test","W-test","F*-test"))
+    for (j in 1:length(RECAP)){ 
+      lines(1:3,RECAP[[j]][S,7:9],bty="n",xaxt="n",main="Averaged power of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)
+    }
+    abline(h=0,lty=2,lwd=2,col="red")
+    #dev.off()
+      }
+   }
 } 
 
 ### SEUL COUAC: PNG ET DEV.OFF, ça ne fonctionne pas. 
-graphs(K=2)
-graphs(K=3)
+graphs(K=2,power_type="observed")
+graphs(K=3,power_type="observed")
+graphs(K=2,power_type="consisency")
+graphs(K=3,power_type="consistency")
