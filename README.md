@@ -7,12 +7,15 @@ For each condition, 1.000.000 random datasets were generated, three test were pe
 2) Observed and expected power were computed for each test (F, F* and W) and for each condition, using the script "Observed and expected power for generated sample datasets.R"
 ==> See "Power.xlsx" for raw observed and expected power.
 
-3) Thanks to te function "Analyses on power.R", tThe three tests (F, F* and W) were compared in terms of:
+3) Thanks to te function "Analyses on power.R", the three tests (F, F* and W) were compared in terms of:
 - raw power
 - consistency between observed and expected power ([O-E]/E)  
 
 4) The Type I error rate were computed for each test (F,F* and W) and for each condition, using the script "Type 1 error rate of generated random datasets.R"
 ==> See "Type I error rate.xlsx"
+
+3) Thanks to te function "Analyses on type I error rate.R", the three tests (F, F* and W) were compared in terms of type I error rate.
+
 
 
 
