@@ -63,7 +63,7 @@ for (i in 1:length(files)){
   SDsd_nN=apply(File[id_SDsd_nN,c(4:6,10:12)],2,mean)
   sdSD_Nn=apply(File[id_sdSD_Nn,c(4:6,10:12)],2,mean)
   
-  subcateg=list(Hom_bal=Hom_bal,Hom_nN=Hom_nN,Hom_Nn=Hom_Nn,sdSD_bal=sdSD_bal,SDsd_bal=SDsd_bal,sdSD_nN=sdSD_nN,SDsd_Nn=SDsd_Nn,SDsd_nN=SDsd_nN,sdSD_Nn=sdSD_Nn)
+  subcateg=list(Hom_bal=Hom_bal,Hom_nN=Hom_nN,Hom_Nn=Hom_Nn,sdSD_bal=sdSD_bal,SDsd_bal=SDsd_bal,sdSD_nN=sdSD_nN,sdSD_Nn=sdSD_Nn,SDsd_nN=SDsd_nN,SDsd_Nn=SDsd_Nn)
   
   # Print results
   
