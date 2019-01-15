@@ -1,4 +1,4 @@
-files_path="F:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/Power/"
+files_path="G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/Power/"
 setwd(files_path)
 files=list.files(files_path)
 
@@ -141,19 +141,19 @@ for (S in 1:length(subcategory)){
   pow=NULL
   if (power_type=="observed"){
     for (j in 1:length(RECAP)){
-      pow=c(pow,RECAP[[j]][S,4:6])
+    pow=c(pow,RECAP[[j]][S,4:6])
       pow=unlist(pow)
     }
     YMIN=min(pow)
     YMAX=max(pow)
-  } else if (power_type=="consistency"){
-    for (j in 1:length(RECAP)){
-      pow=c(pow,RECAP[[j]][S,7:9])
-      pow=unlist(pow)
-    }
-    YMIN=min(pow)
-    YMAX=max(pow)
-  }
+  } #else if (power_type=="consistency"){
+#    for (j in 1:length(RECAP)){
+#      pow=c(pow,RECAP[[j]][S,7:9])
+#      pow=unlist(pow)
+#    }
+#    YMIN=min(pow)
+#    YMAX=max(pow)
+#  }
   
   if (power_type=="observed"){
     #png(file = paste0("Observed power, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
@@ -164,7 +164,7 @@ for (S in 1:length(subcategory)){
     #dev.off()
   } else if (power_type=="consistency"){
     #png(file = paste0("Power consistency, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
-    plot(1:3,RECAP[[1]][S,7:9],bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,xlab="",ylab="averaged power",pch=19,type="o")
+    plot(1:3,RECAP[[1]][S,7:9],bty="n",ylim=c(-.40,.70),xaxt="n",main=Title,xlab="",ylab="averaged power",pch=19,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
       lines(1:3,RECAP[[j]][S,7:9],bty="n",xaxt="n",main="Averaged power of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)
@@ -178,5 +178,6 @@ for (S in 1:length(subcategory)){
 ### SEUL COUAC: PNG ET DEV.OFF, ça ne fonctionne pas. 
 graphs(K=2,power_type="observed")
 graphs(K=3,power_type="observed")
-graphs(K=2,power_type="consisency")
+ 
+graphs(K=2,power_type="consistency")
 graphs(K=3,power_type="consistency")
