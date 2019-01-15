@@ -58,7 +58,7 @@ for (i in 1:length(files)){
   SDsd_nN=apply(File[id_SDsd_nN,c(4:6)],2,mean)
   sdSD_Nn=apply(File[id_sdSD_Nn,c(4:6)],2,mean)
   
-  subcateg=list(Hom_bal=Hom_bal,Hom_nN=Hom_nN,Hom_Nn=Hom_Nn,sdSD_bal=sdSD_bal,SDsd_bal=SDsd_bal,sdSD_nN=sdSD_nN,SDsd_Nn=SDsd_Nn,SDsd_nN=SDsd_nN,sdSD_Nn=sdSD_Nn)
+  subcateg=list(Hom_bal=Hom_bal,Hom_nN=Hom_nN,Hom_Nn=Hom_Nn,sdSD_bal=sdSD_bal,SDsd_bal=SDsd_bal,sdSD_nN=sdSD_nN,sdSD_Nn=sdSD_Nn,SDsd_nN=SDsd_nN,SDsd_Nn=SDsd_Nn)
   
   # Print results
   
@@ -68,7 +68,7 @@ for (i in 1:length(files)){
   alpha_results[,1]=File[1,1] # Distributions of simulations
   alpha_results[,2]=File[1,2] #  Number of groups
   for (j in 1:length(subcateg)){
-    alpha_results[j,3]=ls(subcateg)[j]
+    alpha_results[j,3]=ls(subcateg,sorted=TRUE)[j]
     alpha_results[j,4:6]=round(subcateg[[j]],3)  
      }
   
@@ -82,7 +82,7 @@ for (i in 1:length(files)){
 RECAP_K2=summary(K=2)
 RECAP_K3=summary(K=3)
 RECAP_K4=summary(K=4)
-RECAP_K5=summary(K=5)
+RECAP_K5=summary(K=5) 
 
 ############################## Graphics ############################## 
 
@@ -147,6 +147,8 @@ for (S in 1:length(subcategory)){
     for (j in 1:length(RECAP)){ 
     lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged alpha of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
     abline(h=0.05,lty=2,lwd=2,col="red")
+    
+    rect(.5,.025,3.5,.075, col= rgb(0, 0, 0, alpha=.05),border=NA)
     
     #dev.off()
   } 
