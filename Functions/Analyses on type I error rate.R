@@ -1,4 +1,4 @@
-files_path="F:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/alpha/"
+files_path="G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/alpha/"
 setwd(files_path)
 files=list.files(files_path)
 
@@ -140,16 +140,9 @@ for (S in 1:length(subcategory)){
   Title = paste0("Averaged type I error rate of 3 tests: ","\n",categ,"\n",n)
 
   par(xpd=FALSE,mar=c(3,3,4,1))  
-  alph=NULL
-    for (j in 1:length(RECAP)){
-      alph=c(alph,RECAP[[j]][S,4:6])
-      alph=unlist(alph)
-    }
-    YMIN=min(alph)
-    YMAX=max(alph)
 
     #png(file = paste0("Observed alpha, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
-    plot(1:3,RECAP[[1]][1,4:6],bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,xlab="",ylab="averaged alpha",pch=19,type="o")
+    plot(1:3,RECAP[[1]][1,4:6],bty="n",ylim=c(0,.20),xaxt="n",main=Title,xlab="",ylab="averaged alpha",pch=7,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
     lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged alpha of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
