@@ -142,7 +142,7 @@ for (S in 1:length(subcategory)){
   par(xpd=FALSE,mar=c(3,3,4,1))  
 
     #png(file = paste0("Observed alpha, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
-    plot(1:3,RECAP[[1]][1,4:6],bty="n",ylim=c(0,.20),xaxt="n",main=Title,xlab="",ylab="averaged alpha",pch=7,type="o")
+    plot(1:3,NULL,bty="n",ylim=c(0,.20),xaxt="n",main=Title,xlab="",ylab="averaged alpha",pch=7,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
     lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged alpha of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
