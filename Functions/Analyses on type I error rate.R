@@ -38,31 +38,23 @@ summary=function(K){
     # see codes line 5:14 for subcategories)
     
     # Conditions id 
-    id_Hom_bal=c(6,22,38,54,70)
-    id_Hom_nN=c(10,14,26,30,42,46,58,62,74,78)
-    id_Hom_Nn=c(2,18,34,50,66)
-    id_sdSD_bal=c(7,8,23,24,39,40,55,56,71,72)
-    id_SDsd_bal=c(5,21,37,53,69)
-    id_sdSD_nN=c(11,12,15,16,27,28,31,32,43,44,47,48,59,60,63,64,75,76,79,80)
-    id_SDsd_Nn=c(1,17,33,49,65)
-    id_SDsd_nN=c(9,13,25,29,41,45,57,61,73,77)
-    id_sdSD_Nn=c(3,4,19,20,35,36,51,52,67,68)
-    
+    id_Hom_bal=c(6,22,38,54,70) #
+    id_Hom_unbal=c(10,14,26,30,42,46,58,62,74,78,2,18,34,50,66)
+    id_Het_bal=c(7,8,23,24,39,40,55,56,71,72,5,21,37,53,69)
+    id_Het_positivecor=c(11,12,15,16,27,28,31,32,43,44,47,48,59,60,63,64,75,76,79,80,1,17,33,49,65) 
+    id_Het_negativecor=c(9,13,25,29,41,45,57,61,73,77,3,4,19,20,35,36,51,52,67,68)
+
     Hom_bal=apply(File[id_Hom_bal,c(4:6)],2,mean)
-    Hom_nN=apply(File[id_Hom_nN,c(4:6)],2,mean)
-    Hom_Nn=apply(File[id_Hom_Nn,c(4:6)],2,mean)
-    sdSD_bal=apply(File[id_sdSD_bal,c(4:6)],2,mean)
-    SDsd_bal=apply(File[id_SDsd_bal,c(4:6)],2,mean)
-    sdSD_nN=apply(File[id_sdSD_nN,c(4:6)],2,mean)
-    SDsd_Nn=apply(File[id_SDsd_Nn,c(4:6)],2,mean)
-    SDsd_nN=apply(File[id_SDsd_nN,c(4:6)],2,mean)
-    sdSD_Nn=apply(File[id_sdSD_Nn,c(4:6)],2,mean)
-    
-    subcateg=list(Hom_bal=Hom_bal,Hom_nN=Hom_nN,Hom_Nn=Hom_Nn,sdSD_bal=sdSD_bal,SDsd_bal=SDsd_bal,sdSD_nN=sdSD_nN,sdSD_Nn=sdSD_Nn,SDsd_nN=SDsd_nN,SDsd_Nn=SDsd_Nn)
+    Hom_unbal=apply(File[id_Hom_unbal,c(4:6)],2,mean)
+    Het_bal=apply(File[id_Het_bal,c(4:6)],2,mean)
+    Het_positivecor=apply(File[id_Het_positivecor,c(4:6)],2,mean)
+    Het_negativecor=apply(File[id_Het_negativecor,c(4:6)],2,mean)
+
+    subcateg=list(Het_bal=Het_bal,Het_negativecor=Het_negativecor,Het_positivecor=Het_positivecor,Hom_bal=Hom_bal,Hom_unbal=Hom_unbal)
     
     # Print results
     
-    alpha_results=data.frame(matrix(0, ncol = 6, nrow = 9))
+    alpha_results=data.frame(matrix(0, ncol = 6, nrow = length(subcateg)))
     colnames(alpha_results)=c("Distribution","K","subcategory","alpha_F","alpha_W","alpha_BF")
     
     alpha_results[,1]=File[1,1] # Distributions of simulations
@@ -107,36 +99,18 @@ graphs=function(K){
   ##
   
   for (S in 1:length(subcategory)){
-    
     if (grepl("Hom",subcategory[S])==TRUE){
       categ="equal sd across groups"
       if (grepl("bal",subcategory[S])==TRUE){n="equal n"
-      } else if (grepl("nN",subcategory[S])==TRUE){n="the last group has the highest n"
-      } else if (grepl("Nn",subcategory[S])==TRUE){n="the last group has the smallest n"}      
+      } else if (grepl("unbal",subcategory[S])==TRUE){n="unequal n"}
       
-    } else if (grepl("sdSD",subcategory[S])==TRUE){
-      if (grepl("bal",subcategory[S])==TRUE){
-        categ="the last group has the highest SD"
-        n="equal n"
-      } else if (grepl("nN",subcategory[S])==TRUE){
-        categ="positive correlation between n and sd"
-        n="the last group has the biggest n and sd"
-      } else if (grepl("Nn",subcategory[S])==TRUE){
-        categ="negative correlation between n and sd"
-        n="the last group has the smallest n and the biggest sd"}      
-      
-    } else if (grepl("SDsd",subcategory[S])==TRUE) {
-      if (grepl("bal",subcategory[S])==TRUE){
-        categ="the last group has the smallest SD"
-        n="equal n"
-      } else if (grepl("nN",subcategory[S])==TRUE){
-        categ="negative correlation between n and sd"
-        n="the last group has the biggest n and the smallest sd"
-      } else if (grepl("Nn",subcategory[S])==TRUE){
-        categ="positive correlation between n and sd"
-        n="the last group has the smallest n and sd"}      
+    } else if (grepl("Het",subcategory[S])==TRUE){
+        categ="unequal sd across groups"
+        if (grepl("bal",subcategory[S])==TRUE){n="equal n"
+        } else if (grepl("negativecor",subcategory[S])==TRUE){n="negative correlation between n and sd"
+        } else if (grepl("positivecor",subcategory[S])==TRUE){n="positive correlation between n and sd"}
     }
-    
+      
     Title = paste0("Averaged type I error rate of 3 tests: ","\n",categ,"\n",n)
     
     par(xpd=FALSE,mar=c(3,3,4,1))  
