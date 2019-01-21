@@ -151,7 +151,7 @@ graphs=function(K){
     rect(.5,.025,3.5,.075, col= rgb(0, 0, 0, alpha=.05),border=NA)
     
     #dev.off()
-  } 
+  }  
   
 } 
 
