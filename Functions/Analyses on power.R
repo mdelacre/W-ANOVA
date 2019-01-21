@@ -74,7 +74,7 @@ for (i in 1:length(files)){
   power_results[,2]=File[1,2] #  Number of groups
   for (j in 1:length(subcateg)){
     power_results[j,3]=ls(subcateg)[j]
-    power_results[j,4:9]=round(subcateg[[j]],3)  
+    power_results[j,4:9]=round(subcateg[[j]],3)   
      }
   
   RECAP[[i]]=power_results
@@ -157,7 +157,7 @@ for (S in 1:length(subcategory)){
   
   if (power_type=="observed"){
     #png(file = paste0("Observed power, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
-    plot(1:3,RECAP[[1]][S,4:6],bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,xlab="",ylab="averaged power",pch=19,type="o")
+    plot(1:3,NULL,bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,xlab="",ylab="averaged power",pch=19,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
     lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged power of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
