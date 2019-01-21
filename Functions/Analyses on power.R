@@ -164,7 +164,7 @@ for (S in 1:length(subcategory)){
     #dev.off()
   } else if (power_type=="consistency"){
     #png(file = paste0("Power consistency, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
-    plot(1:3,RECAP[[1]][S,7:9],bty="n",ylim=c(-.40,.70),xaxt="n",main=Title,xlab="",ylab="averaged power",pch=19,type="o")
+    plot(1:3,NULL,bty="n",ylim=c(-.40,.70),xaxt="n",main=Title,xlab="",ylab="averaged power",pch=19,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
       lines(1:3,RECAP[[j]][S,7:9],bty="n",xaxt="n",main="Averaged power of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)
