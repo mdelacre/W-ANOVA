@@ -101,8 +101,8 @@ graphs=function(K){
   for (S in 1:length(subcategory)){
     if (grepl("Hom",subcategory[S])==TRUE){
       categ="equal sd across groups"
-      if (grepl("bal",subcategory[S])==TRUE){n="equal n"
-      } else if (grepl("unbal",subcategory[S])==TRUE){n="unequal n"}
+      if (grepl("unbal",subcategory[S])==TRUE){n="unequal n"
+      } else if (grepl("bal",subcategory[S])==TRUE){n="equal n"}
       
     } else if (grepl("Het",subcategory[S])==TRUE){
         categ="unequal sd across groups"
