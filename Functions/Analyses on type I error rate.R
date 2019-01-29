@@ -94,7 +94,7 @@ legend("center", legend=c("Chi-square and normal Left-skewed","Chi-square and no
        lty=1:7,pch=1:7,cex=1.1)
 
 
-graphs=function(K,yliminf,ylimsup){
+graphs=function(K,yliminf,ylimsup,alpha){
   
   if (K==2){RECAP=RECAP_K2
   } else if (K==3){RECAP=RECAP_K3
@@ -131,16 +131,17 @@ graphs=function(K,yliminf,ylimsup){
       lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged alpha of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
     abline(h=0.05,lty=2,lwd=2,col="red")
     
-    rect(.5,.025,3.5,.075, col= rgb(0, 0, 0, alpha=.05),border=NA)
-    rect(.5,.045,3.5,.055, col= rgb(0, 0, 0, alpha=.25),border=NA)
+    rect(.5,.5*alpha,3.5,1.5*alpha, col= rgb(0, 0, 0, alpha=.05),border=NA)
+    rect(.5,.9*alpha,3.5,1.1*alpha, col= rgb(0, 0, 0, alpha=.25),border=NA)
     
     #dev.off()
   }  
   
 } 
 
+
 ### SEUL COUAC: PNG ET DEV.OFF, ça ne fonctionne pas. 
-graphs(K=2,.02,.13)
-graphs(K=3,.02,.13) 
-graphs(K=4,.02,.13)
-graphs(K=5,.02,.13)
+graphs(K=2,.02,.13,alpha=.05)
+graphs(K=3,.02,.13,alpha=.05) 
+graphs(K=4,.02,.13,alpha=.05)
+graphs(K=5,.02,.13,alpha=.05)
