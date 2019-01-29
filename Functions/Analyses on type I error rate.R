@@ -51,17 +51,26 @@ summary=function(K){
     Het_negativecor=apply(File[id_Het_negativecor,c(4:6)],2,mean)
 
     subcateg=list(Het_bal=Het_bal,Het_negativecor=Het_negativecor,Het_positivecor=Het_positivecor,Hom_bal=Hom_bal,Hom_unbal=Hom_unbal)
+
+    Hom_bal_sd=apply(File[id_Hom_bal,c(4:6)],2,sd)
+    Hom_unbal_sd=apply(File[id_Hom_unbal,c(4:6)],2,sd)
+    Het_bal_sd=apply(File[id_Het_bal,c(4:6)],2,sd)
+    Het_positivecor_sd=apply(File[id_Het_positivecor,c(4:6)],2,sd)
+    Het_negativecor_sd=apply(File[id_Het_negativecor,c(4:6)],2,sd)
+    
+    subcateg_sd=list(Het_bal_sd=Het_bal_sd,Het_negativecor_sd=Het_negativecor_sd,Het_positivecor_sd=Het_positivecor_sd,Hom_bal_sd=Hom_bal_sd,Hom_unbal_sd=Hom_unbal_sd)
     
     # Print results
     
-    alpha_results=data.frame(matrix(0, ncol = 6, nrow = length(subcateg)))
-    colnames(alpha_results)=c("Distribution","K","subcategory","alpha_F","alpha_W","alpha_BF")
+    alpha_results=data.frame(matrix(0, ncol = 9, nrow = length(subcateg)))
+    colnames(alpha_results)=c("Distribution","K","subcategory","alpha_F","alpha_W","alpha_BF","stderror_F","stderror_W","stderror_BF")
     
     alpha_results[,1]=File[1,1] # Distributions of simulations
     alpha_results[,2]=File[1,2] #  Number of groups
     for (j in 1:length(subcateg)){
       alpha_results[j,3]=ls(subcateg,sorted=TRUE)[j]
       alpha_results[j,4:6]=round(subcateg[[j]],3)  
+      alpha_results[j,7:9]=round(subcateg_sd[[j]],3)
     }
     
     RECAP[[i]]=alpha_results
