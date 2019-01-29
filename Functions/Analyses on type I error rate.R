@@ -85,7 +85,7 @@ legend("center", legend=c("Chi-square and normal Left-skewed","Chi-square and no
        lty=1:7,pch=1:7,cex=1.1)
 
 
-graphs=function(K){
+graphs=function(K,yliminf,ylimsup){
   
   if (K==2){RECAP=RECAP_K2
   } else if (K==3){RECAP=RECAP_K3
@@ -116,13 +116,14 @@ graphs=function(K){
     par(xpd=FALSE,mar=c(3,3,4,1))  
     
     #png(file = paste0("Observed alpha, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
-    plot(1:3,NULL,bty="n",ylim=c(0,.20),xaxt="n",main=Title,xlab="",ylab="averaged alpha",pch=7,type="o")
+    plot(1:3,NULL,bty="n",ylim=c(yliminf,ylimsup),xaxt="n",main=Title,xlab="",ylab="averaged alpha",pch=7,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
       lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged alpha of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
     abline(h=0.05,lty=2,lwd=2,col="red")
     
     rect(.5,.025,3.5,.075, col= rgb(0, 0, 0, alpha=.05),border=NA)
+    rect(.5,.045,3.5,.055, col= rgb(0, 0, 0, alpha=.25),border=NA)
     
     #dev.off()
   }  
@@ -130,7 +131,7 @@ graphs=function(K){
 } 
 
 ### SEUL COUAC: PNG ET DEV.OFF, ça ne fonctionne pas. 
-graphs(K=2)
-graphs(K=3)
-graphs(K=4)
-graphs(K=5)
+graphs(K=2,.02,.13)
+graphs(K=3,.02,.13) 
+graphs(K=4,.02,.13)
+graphs(K=5,.02,.13)
