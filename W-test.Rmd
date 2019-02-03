@@ -1,5 +1,5 @@
 ---
-title             : "Taking Parametric Assumptions Seriously: Arguments for the Use of Welch's F-test instead of the Classical F-test in One-way ANOVA"
+title             : "Taking Parametric Assumptions Seriously: Arguments for the Use of Welch's *F*-test instead of the Classical *F*-test in One-way ANOVA"
 shorttitle        : "W-test instead of F-test"
 
 author: 
@@ -10,7 +10,7 @@ author:
     email         : "marie.delacre@ulb.ac.be"
   - name          : "Christophe Leys"
     affiliation   : "1"
-  - name          : "Mora L. Youri"
+  - name          : "Youri L. Mora"
     affiliation   : "1"
   - name          : "Daniël Lakens"
     affiliation   : "2"
@@ -29,7 +29,7 @@ authornote: |
   First author performed simulations. First, second and fourth authors contributed to the design. All authors contributed to the writing and the review of the literature. The Supplemental Material, including the full R code for the simulations and plots can be obtained from https://github.com/mdelacre/Welch-ANOVA. The authors declare that they have no conflicts of interest with respect to the authorship or the publication of this article.
 
 abstract: |
-  Parametric tests rely on two main assumptions: normality of the distribution and equality of variances. We argue that these assumptions are often unrealistic in the field of psychology. We underline the current lack of attention to parametric assumptions through an analysis of researchers' practices. Through Monte Carlo simulations we illustrate the consequences of performing the classic parametric *F*-test for ANOVA when the test assumptions are not met on the Type I error rate and statistical power. Under realistic deviations from the assumption of equal variances the classic *F*-test can yield severely biased results and lead to invalid statistical inferences. We examine two common alternatives to the *F*-test, namely the Welch's ANOVA (*W*-test) and the Brown-Forsythe test (*F\**-test). Our simulations show that the W-test is a better alternative and we therefore recommend using the W-test by default when comparing means. We provide a detailed example explaining how to perform the W-test in SPSS and R. We summarize our conclusions in five practical recommendations that researchers can use to improve their statistical practices.    
+  Parametric tests rely on two main assumptions: normality of the distribution and equality of variances. We argue that these assumptions are often unrealistic in the field of psychology. We underline the current lack of attention to parametric assumptions through an analysis of researchers' practices. Through Monte Carlo simulations we illustrate the consequences of performing the classic parametric *F*-test for ANOVA when the test assumptions are not met on the Type I error rate and statistical power. Under realistic deviations from the assumption of equal variances the classic *F*-test can yield severely biased results and lead to invalid statistical inferences. We examine two common alternatives to the *F*-test, namely the Welch's ANOVA (*W*-test) and the Brown-Forsythe test (*F\**-test). Our simulations show that the *W*-test is a better alternative and we therefore recommend using the *W*-test by default when comparing means. We provide a detailed example explaining how to perform the *W*-test in SPSS and R. We summarize our conclusions in five practical recommendations that researchers can use to improve their statistical practices.    
  
 keywords          : "W-test; ANOVA; homogeneity of variance; statistical power; type I error, parametric assumptions"
 wordcount         : "X"
@@ -40,7 +40,7 @@ floatsintext      : no
 figsintext: yes
 figurelist        : no
 tablelist         : no
-endotelist      : yes
+footnotelist      : no
 linenumbers       : yes
 mask              : no
 draft             : no
@@ -270,4 +270,4 @@ In sum, we provide five recommendations:
 
 5. Use balanced designs (i.e. same sample size in each group) whenever possible. When using the *W*-test, the Type I error rate is a function of criteria such as the skewness of the distributions, and whether skewness is combined with unequal variances and unequal sample sizes between groups. Our simulations show that the Type I error rate control is in general slightly better with balanced designs. 
  
- 
+  
