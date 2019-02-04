@@ -124,11 +124,11 @@ for (S in 1:length(subcategory)){
           index="d: "
         } else if (grepl("nN",subcategory[S])==TRUE){
           categ="positive correlation between n and sd"
-          n="positive correlation between n and mean"
+          n="positive correlation between sd and mean"
           index="e: "
         } else if (grepl("Nn",subcategory[S])==TRUE){
           categ="negative correlation between n and sd"
-          n="negative correlation between n and mean"
+          n="positive correlation between sd and mean"
           index="f: "}      
     
     } else if (grepl("SDsd",subcategory[S])==TRUE) {
@@ -138,7 +138,7 @@ for (S in 1:length(subcategory)){
           index="g: "
         } else if (grepl("nN",subcategory[S])==TRUE){
           categ="negative correlation between n and sd"
-          n="positive correlation between n and mean"
+          n="negative correlation between sd and mean"
           index="h: "
         } else if (grepl("Nn",subcategory[S])==TRUE){
           categ="positive correlation between n and sd"
