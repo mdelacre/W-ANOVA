@@ -168,24 +168,20 @@ for (S in 1:length(subcategory)){
 #  }
   
   if (power_type=="observed"){
-    #png(file = paste0("Observed power, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
-    plot(1:3,NULL,bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,xlab="",ylab="averaged power",pch=19,type="o")
+    plot(1:3,NULL,bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,cex.main=1.2,xlab="",ylab="averaged power",pch=19,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
     lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged power of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
-    #dev.off()
   } else if (power_type=="consistency"){
-    #png(file = paste0("Power consistency, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
-    plot(1:3,NULL,bty="n",ylim=c(-.40,.70),xaxt="n",main=Title,xlab="",ylab="averaged power",pch=19,type="o")
+    plot(1:3,NULL,bty="n",ylim=c(-.40,.70),xaxt="n",main=Title,cex.main=1.2,xlab="",ylab="averaged power",pch=19,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
       lines(1:3,RECAP[[j]][S,7:9],bty="n",xaxt="n",main="Averaged power of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)
     }
     abline(h=0,lty=2,lwd=2,col="red")
-    #dev.off()
       }
    }
-} 
+}  
 
 ### SEUL COUAC: PNG ET DEV.OFF, ça ne fonctionne pas. 
 graphs(K=2,power_type="observed")
