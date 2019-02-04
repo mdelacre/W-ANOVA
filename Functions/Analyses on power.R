@@ -142,7 +142,7 @@ for (S in 1:length(subcategory)){
           index="h: "
         } else if (grepl("Nn",subcategory[S])==TRUE){
           categ="positive correlation between n and sd"
-          n="negative correlation between n and mean"
+          n="negative correlation between sd and mean"
           index="i: "}      
     }
 
@@ -187,6 +187,5 @@ for (S in 1:length(subcategory)){
 graphs(K=2,power_type="observed")
 graphs(K=3,power_type="observed")
 
- 
 graphs(K=2,power_type="consistency")
 graphs(K=3,power_type="consistency")
