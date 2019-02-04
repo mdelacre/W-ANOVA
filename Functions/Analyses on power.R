@@ -107,35 +107,47 @@ for (S in 1:length(subcategory)){
   
     if (grepl("Hom",subcategory[S])==TRUE){
       categ="equal sd across groups"
-        if (grepl("bal",subcategory[S])==TRUE){n="equal n"
-        } else if (grepl("nN",subcategory[S])==TRUE){n="positive correlation between n and mean"
-        } else if (grepl("Nn",subcategory[S])==TRUE){n="negative correlation between n and mean"}      
+        if (grepl("bal",subcategory[S])==TRUE){
+          n="equal n"
+          index="a: "
+        } else if (grepl("nN",subcategory[S])==TRUE){
+          n="positive correlation between n and mean"
+          index="b: "
+        } else if (grepl("Nn",subcategory[S])==TRUE){
+          n="negative correlation between n and mean"
+          index="c: "}      
     
     } else if (grepl("sdSD",subcategory[S])==TRUE){
         if (grepl("bal",subcategory[S])==TRUE){
           categ="positive correlation between sd and mean"
           n="equal n"
+          index="d: "
         } else if (grepl("nN",subcategory[S])==TRUE){
           categ="positive correlation between n and sd"
           n="positive correlation between n and mean"
+          index="e: "
         } else if (grepl("Nn",subcategory[S])==TRUE){
           categ="negative correlation between n and sd"
-          n="negative correlation between n and mean"}      
+          n="negative correlation between n and mean"
+          index="f: "}      
     
     } else if (grepl("SDsd",subcategory[S])==TRUE) {
         if (grepl("bal",subcategory[S])==TRUE){
           categ="negative correlation between sd and mean"
           n="equal n"
+          index="g: "
         } else if (grepl("nN",subcategory[S])==TRUE){
           categ="negative correlation between n and sd"
           n="positive correlation between n and mean"
+          index="h: "
         } else if (grepl("Nn",subcategory[S])==TRUE){
           categ="positive correlation between n and sd"
-          n="negative correlation between n and mean"}      
+          n="negative correlation between n and mean"
+          index="i: "}      
     }
 
-  if (power_type=="observed"){Title = paste0("Averaged power of 3 tests: ","\n",categ,"\n",n)
-  } else if (power_type=="consistency"){Title = paste0("Averaged consistency of 3 tests: (O-E)/E","\n",categ,"\n",n)}
+    if (power_type=="observed"){Title = paste0(index,categ,"\n",n)
+  } else if (power_type=="consistency"){Title = paste0(index,categ,"\n",n)}
   
   par(xpd=FALSE,mar=c(3,3,4,1))  
   pow=NULL
@@ -178,6 +190,7 @@ for (S in 1:length(subcategory)){
 ### SEUL COUAC: PNG ET DEV.OFF, ça ne fonctionne pas. 
 graphs(K=2,power_type="observed")
 graphs(K=3,power_type="observed")
+
  
 graphs(K=2,power_type="consistency")
 graphs(K=3,power_type="consistency")
