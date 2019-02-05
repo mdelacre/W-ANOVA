@@ -149,26 +149,22 @@ for (S in 1:length(subcategory)){
     if (power_type=="observed"){Title = paste0(index,categ,"\n",n)
   } else if (power_type=="consistency"){Title = paste0(index,categ,"\n",n)}
   
-  par(xpd=FALSE,mar=c(3,3,4,1))  
+  par(xpd=FALSE,mar=c(3,4,4,1))  
   pow=NULL
-  if (power_type=="observed"){
     for (j in 1:length(RECAP)){
     pow=c(pow,RECAP[[j]][S,4:6])
       pow=unlist(pow)
     }
-    YMIN=min(pow)
-    YMAX=max(pow)
-  } #else if (power_type=="consistency"){
-#    for (j in 1:length(RECAP)){
-#      pow=c(pow,RECAP[[j]][S,7:9])
-#      pow=unlist(pow)
-#    }
-#    YMIN=min(pow)
-#    YMAX=max(pow)
-#  }
-  
+    MIN_Y=min(unlist(pow))-min(unlist(pow))%%.1
+    if(MIN_Y>=.7){
+      YMIN=.7
+      YMAX=1} else{
+        YMIN=MIN_Y
+        YMAX=YMIN+.3    
+      }
+    
   if (power_type=="observed"){
-    plot(1:3,NULL,bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,cex.main=1.2,xlab="",ylab="averaged power",pch=19,type="o")
+    plot(1:3,NULL,bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,cex.main=1.2,xlab="",ylab="averaged power",pch=19,type="o",col="white")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
     lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged power of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
