@@ -264,7 +264,7 @@ When there is no difference mean, the 9 cells of Table 1 boils down into 5 subco
 In Figure 1, we computed the average Type I error rate of the three tests under the 5 prementioned subcategories. The light grey area corresponds to the liberal criterion from @Bradley_1978, from which a departure from the nominal alpha is acceptable as long as the type I error rate falls within the interval [$.5 \times \alpha$; $1.5 \times \alpha$]. The dark grey area corresponds to the more conservative criterion from which departures from the nominal alpha is negligible as long as the Type I error rate falls within the interval [$.9 \times \alpha$; $1.1 \times \alpha$].
 
 ```{r "", echo=FALSE, fig.width = 15,fig.height=8,out.width = '100%',fig.cap = "Type I error rate of the F-test, W-test and F*-test under 5 subcategories. Top left: cell a in Table 1; top right: cells b and c; bottom left: cells d and g; bottom middle: cells e and i; bottom right: cells f and h. "}
-knitr::include_graphics("C:/Users/Administrateur/Documents/GITHUB/W-ANOVA/Rmarkdown folder/Rmarkdown inputs/Fig 1_after revision.PNG")
+knitr::include_graphics("Rmarkdown folder/Rmarkdown inputs/Fig 1_after revision.PNG")
 ```
 
 ### Simulating datasets equal variances between groups. 
@@ -302,11 +302,11 @@ Consistency=\frac{0-E}{E}
 In other words, a consistency equal to zero shows that the observed power is consistent with theoretical power (under the parametric assumptions of normality and homoscedasticity); a negative consistency shows that the observed power is lower than the expected power; and a positive consistency shows that the observed power is higher than the expected power.
 
 ```{r "", echo=FALSE, fig.width = 15,fig.height=8,out.width = '100%',fig.cap = "Consistency of the F-test, W-test and F*-test under 9 subcategories"}
-knitr::include_graphics("C:/Users/Administrateur/Documents/GITHUB/W-ANOVA/Rmarkdown folder/Rmarkdown inputs/Fig2_after revision.PNG")
+knitr::include_graphics("Rmarkdown folder/Rmarkdown inputs/Fig2_after revision.PNG")
 ```
  
 ```{r "", echo=FALSE, fig.width = 15,fig.height=8,out.width = '100%',fig.cap = "Power of the F-test, W-test and F*-test under 9 subcategories"}
-knitr::include_graphics("C:/Users/Administrateur/Documents/GITHUB/W-ANOVA/Rmarkdown folder/Rmarkdown inputs/Fig3_after revision.PNG")
+knitr::include_graphics("Rmarkdown folder/Rmarkdown inputs/Fig3_after revision.PNG")
 ```
 
 ### Simulating datasets with equal variances between groups. 

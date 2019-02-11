@@ -7,7 +7,7 @@ output:
 
 A summary is presented in Table A1. The complete example is available on Github. The DV is a score that can vary from 0 to 40. The IV is a three-level factor A (levels = $A_1$, $A_2$ and $A_3$). 
 ```{r "", echo=FALSE, out.width = '100%',fig.cap = ""}
-knitr::include_graphics("C:/Users/Administrateur/Documents/GITHUB/W-ANOVA/Rmarkdown folder/Rmarkdown inputs/TableA1.PNG")
+knitr::include_graphics("Rmarkdown folder/Rmarkdown inputs/TableA1.PNG")
 ```
 
 ```{r "", echo=FALSE, out.width = '100%',fig.cap = ""}
