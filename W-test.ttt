@@ -1,0 +1,18 @@
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+& & & \textbf{\emph{n}-ratio} &\tabularnewline
+\midrule
+\endhead
+& & \textbf{1} & \textbf{\textgreater{}1} &
+\textbf{\textless{}1}\tabularnewline
+& & ------------ & ------------- & -------------\tabularnewline
+& \textbf{1} & a & b & c\tabularnewline
+& & & &\tabularnewline
+\textbf{\emph{SD}-ratio} & \textbf{\textgreater{}1} & d & e &
+f\tabularnewline
+& & & &\tabularnewline
+& \textbf{\textless{}1} & g & h & i\tabularnewline
+\bottomrule
+\end{longtable}
+\efloatseparator
+ 
