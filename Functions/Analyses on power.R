@@ -176,7 +176,7 @@ for (S in 1:length(subcategory)){
     }
     abline(h=0,lty=2,lwd=2,col="red")
       }
-   }
+   } 
 }  
 
 ### SEUL COUAC: PNG ET DEV.OFF, ça ne fonctionne pas. 

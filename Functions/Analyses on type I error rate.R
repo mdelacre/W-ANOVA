@@ -138,7 +138,7 @@ graphs=function(K,yliminf,ylimsup,alpha){
   }  
   
 } 
-
+ 
 
 ### SEUL COUAC: PNG ET DEV.OFF, ça ne fonctionne pas. 
 graphs(K=2,.02,.13,alpha=.05)
