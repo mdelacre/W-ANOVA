@@ -89,7 +89,7 @@ RECAP_K5=summary(K=5)
 
 # Legend
 
-plot(1:3,RECAP[[1]][1,4:6],bty="n",xaxt="n",,yaxt="n",ylim=c(.62,.67),main="",xlab="",ylab="averaged alpha",pch=19,type="o")
+plot(1:3,RECAP[[1]][1,4:6],bty="n",xaxt="n",yaxt="n",ylim=c(.62,.67),main="",xlab="",ylab="",pch=19,type="o")
 legend("center", legend=c("Chi-square and normal Left-skewed","Chi-square and normal Righ-skewed","Double exponential","Mixed normal","Normal","Normal Right-skewed and Normal Left-skewed","Normal right-skewed"),
        lty=1:7,pch=1:7,cex=1.1)
 
@@ -120,7 +120,7 @@ graphs=function(K,yliminf,ylimsup,alpha){
         } else if (grepl("positivecor",subcategory[S])==TRUE){n="positive correlation between n and sd"}
     }
       
-    Title = paste0("Averaged type I error rate of 3 tests: ","\n",categ,"\n",n)
+    Title = paste0("Averaged Type I error rate of 3 tests: ","\n",categ,"\n",n)
     
     par(xpd=FALSE,mar=c(3,3,4,1))  
     
