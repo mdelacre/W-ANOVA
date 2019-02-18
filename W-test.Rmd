@@ -231,7 +231,7 @@ When there is a negative correlation between sample sizes and *SDs* (cells h and
 We can draw the following conclusions for the Type I error rate:
 
 1) When all assumptions are met, all tests perform adequately.   
-2) When variances are equal between groups and distributions are not normal, the *W*-test is a little less efficient than both the *F*-test and the *F\**-test, but departures from the nominal 5% Type 1 error rate never exceed the liberal criterion of @Bradley_1978.    
+2) When variances are equal between groups and distributions are not normal, the *W*-test is a little less efficient than both the *F*-test and the *F\**-test, but departures from the nominal 5% Type I error rate never exceed the liberal criterion of @Bradley_1978.    
 3) When the assumption of equal variances is violated, the *W*-test clearly outperforms both the *F\**-test (which is more liberal) and the *F*-test (which is either more liberal or more conservative, depending on the *SDs* and *SD* pairing).   
 4)	The last conclusion generally remains true when both the assumptions of equal variances and normality are not met.
 
