@@ -3,6 +3,9 @@ output:
   pdf_document: default
   html_document: default
 ---
+\setlength{\parindent}{0.0in}
+\setlength{\leftskip}{0.0in}
+
 ## The Mathematical Development of the *F*-test, *W*-test, and *F*\*-test: Numerical Example 
 
 A summary is presented in Table A1. The complete example is available on Github. The DV is a score that can vary from 0 to 40. The IV is a three-level factor A (levels = $A_1$, $A_2$ and $A_3$). 
