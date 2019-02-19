@@ -91,13 +91,13 @@ RECAP_K3=summary(K=3)
 
 # Legend
 
-plot(1:3,RECAP[[1]][1,4:6],bty="n",xaxt="n",,yaxt="n",ylim=c(.62,.67),main="",xlab="",ylab="averaged power",pch=19,type="o")
+par(mfrow=c(1,1),oma = c(0, 0, 0, 0))
+plot(1:3,RECAP[[1]][1,4:6],bty="n",xaxt="n",,yaxt="n",ylim=c(.62,.67),main="",ylab="",xlab="",pch=19,type="o")
 legend("center", legend=c("Chi-square and normal Left-skewed","Chi-square and normal Righ-skewed","Double exponential","Mixed normal","Normal","Normal Right-skewed and Normal Left-skewed","Normal right-skewed"),
        lty=1:7,pch=1:7,cex=1.1)
 
-graphs=function(K,power_type){
+graphs=function(K){
 
-    # power_type = "observed" if observed power; "consistency" if [O-E]/E
 if (K==2){RECAP=RECAP_K2
 } else if (K==3){RECAP=RECAP_K3}
 
@@ -146,9 +146,8 @@ for (S in 1:length(subcategory)){
           index="i: "}      
     }
 
-    if (power_type=="observed"){Title = paste0(index,categ,"\n",n)
-  } else if (power_type=="consistency"){Title = paste0(index,categ,"\n",n)}
-  
+  Title = paste0(index,categ,"\n",n)
+
   par(xpd=FALSE,mar=c(3,4,4,1))  
   pow=NULL
     for (j in 1:length(RECAP)){
@@ -163,25 +162,25 @@ for (S in 1:length(subcategory)){
         YMAX=YMIN+.3    
       }
     
-  if (power_type=="observed"){
-    plot(1:3,NULL,bty="n",ylim=c(YMIN,YMAX),xaxt="n",main=Title,cex.main=1.2,xlab="",ylab="averaged power",pch=19,type="o",col="white")
+    par(mfrow=c(1,2),oma = c(0, 0, 3, 0))
+    plot(1:3,NULL,bty="n",ylim=c(YMIN,YMAX),xaxt="n",main="Power",cex.main=1.2,xlab="",ylab="averaged power",pch=19,type="o",col="white")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
-    lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged power of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
-  } else if (power_type=="consistency"){
-    plot(1:3,NULL,bty="n",ylim=c(-.40,.70),xaxt="n",main=Title,cex.main=1.2,xlab="",ylab="averaged power",pch=19,type="o")
+    lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",pch=j,type="o",lty=j)}
+
+    plot(1:3,NULL,bty="n",ylim=c(-.40,.80),xaxt="n",main="Consistency",cex.main=1.2,xlab="",ylab="averaged consistency",pch=19,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
-      lines(1:3,RECAP[[j]][S,7:9],bty="n",xaxt="n",main="Averaged power of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)
+      lines(1:3,RECAP[[j]][S,7:9],bty="n",xaxt="n",pch=j,type="o",lty=j)
     }
     abline(h=0,lty=2,lwd=2,col="red")
-      }
+  
+    mtext(Title, outer = TRUE, cex = 1.3)
+    
    } 
-}  
+}   
 
 ### SEUL COUAC: PNG ET DEV.OFF, ça ne fonctionne pas. 
-graphs(K=2,power_type="observed")
-graphs(K=3,power_type="observed")
+graphs(K=2)
+graphs(K=3)
 
-graphs(K=2,power_type="consistency")
-graphs(K=3,power_type="consistency")
