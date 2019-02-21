@@ -142,8 +142,8 @@ for (S in 1:length(subcategory)){
         YMIN=MIN_Y
         YMAX=YMIN+.3    
       }
- 
-    setwd("C:/Users/Administrateur/Documents/GITHUB/W-ANOVA/Rmarkdown folder/Rmarkdown inputs")
+
+    setwd("G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/Power/")
     png(file=paste0("Fig2",index[S],".png"),width=2000,height=1700, units = "px", res = 300)
     par(mfrow=c(1,2),oma = c(0, 0, 3, 0))
     plot(1:3,NULL,bty="n",ylim=c(YMIN,YMAX),xaxt="n",main="Power",cex.main=1.2,xlab="",ylab="averaged power",pch=19,type="o",col="white")
