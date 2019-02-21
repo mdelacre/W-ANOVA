@@ -7,7 +7,7 @@ power=function(alpha){
   subfolder1=list.files(Mainfolder)
   subfolder2=list.files(paste0(Mainfolder,subfolder1[1]))
   subfolders=expand.grid(subfolder1,subfolder2)
-  subsection=paste0(subfolders[,1],"/",subfolders[,2])
+  subsection=paste0(subfolders[,1],"/",subfolders[,2]) 
   
   for (j in 1:length(subsection)){ 
   target_section=paste0(Mainfolder,subsection[j])
