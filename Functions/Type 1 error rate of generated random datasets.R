@@ -6,7 +6,7 @@ library(stringr)
 typeIerrorrate=function(alpha){
   
   # Defining all subsections containing RDS files
-  Mainfolder="F:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/Data files/All simulations/Without effect/"
+  Mainfolder="G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/Data files/All simulations/Without effect/"
   subfolder1=list.files(Mainfolder)
   subfolder2=list.files(paste0(Mainfolder,subfolder1[1]))
   subfolders=expand.grid(subfolder1,subfolder2)
@@ -57,10 +57,12 @@ typeIerrorrate=function(alpha){
       rm(A)
     }
     
-    setwd("F:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/alpha/")
+    setwd("G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/alpha/")
     write.table(results,paste0(results[1,1]," when k= ",results[1,2]," and alpha= ",alpha,".txt"),sep=";",dec=",")  
     rm(results)
   }
 }
 
+typeIerrorrate(alpha=.01)
 typeIerrorrate(alpha=.05)
+typeIerrorrate(alpha=.10)
