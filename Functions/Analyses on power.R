@@ -1,10 +1,3 @@
-files_path="G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/Power/"
-setwd(files_path)
-files=list.files(files_path)
-
-files_k2=files[grepl("k= 2",files)==TRUE]
-files_k3=files[grepl("k= 3",files)==TRUE] 
-
 # Codes for subcategories
 # Hom vs. sdSD vs. SDsd 
 ##### Hom = homoscedasticity 
@@ -18,10 +11,29 @@ files_k3=files[grepl("k= 3",files)==TRUE]
 
 RECAP=NULL
 
-summary=function(K){
+summary=function(K,alpha){
 
-  if (K==2){files=files_k2
-  } else if (K==3){files=files_k3}
+  files_path="G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/Power/"
+  setwd(files_path)
+  allfiles=list.files(files_path)
+
+  if (K==2){
+    Files=allfiles[grepl("k= 2",allfiles)==TRUE]
+    if(alpha==0.05){
+        files=Files[grepl("alpha= 0.05",Files)==TRUE]
+    } else if (alpha==0.01){
+        files=Files[grepl("alpha= 0.01",Files)==TRUE]
+    } else if (alpha==0.1){
+        files=Files[grepl("alpha= 0.1",Files)==TRUE]}
+  } else if (K==3){
+    Files=allfiles[grepl("k= 3",allfiles)==TRUE]
+    if(alpha==0.05){
+      files=Files[grepl("alpha= 0.05",Files)==TRUE]
+    } else if (alpha==0.01){
+      files=Files[grepl("alpha= 0.01",Files)==TRUE]
+    } else if (alpha==0.1){
+      files=Files[grepl("alpha= 0.1",Files)==TRUE]}
+  }
   
 for (i in 1:length(files)){
 
@@ -80,12 +92,16 @@ for (i in 1:length(files)){
   RECAP[[i]]=power_results
   
 }
+  write.table(RECAP,paste0("power RECAP, K=",K,"and alpha=",alpha,".txt"))
   return(RECAP)
-  cat(capture.output(print(RECAP), file=paste0("power RECAP, K=",K,".txt")))
 }
 
-RECAP_K2=summary(K=2)
-RECAP_K3=summary(K=3)
+RECAP_K2_alpha.01=summary(K=2,alpha=.01)
+RECAP_K2_alpha.05=summary(K=2,alpha=.05)
+RECAP_K2_alpha.1=summary(K=2,alpha=.1)
+RECAP_K3_alpha.01=summary(K=3,alpha=.01)
+RECAP_K3_alpha.05=summary(K=3,alpha=.05)
+RECAP_K3_alpha.1=summary(K=3,alpha=.1)
 
 ############################## Graphics ############################## 
 
@@ -96,58 +112,23 @@ plot(1:3,RECAP[[1]][1,4:6],bty="n",xaxt="n",,yaxt="n",ylim=c(.62,.67),main="",yl
 legend("center", legend=c("Chi-square and normal Left-skewed","Chi-square and normal Righ-skewed","Double exponential","Mixed normal","Normal","Normal Right-skewed and Normal Left-skewed","Normal right-skewed"),
        lty=1:7,pch=1:7,cex=1.1)
 
-graphs=function(K){
+graphs=function(K,alpha){
 
-if (K==2){RECAP=RECAP_K2
-} else if (K==3){RECAP=RECAP_K3}
+if (K==2){
+  if(alpha==.01){RECAP=RECAP_K2_alpha.01
+  } else if (alpha==.05){RECAP=RECAP_K2_alpha.05
+  } else if (alpha==.1){RECAP=RECAP_K2_alpha.1}
+} else if (K==3){
+  if(alpha==.01){RECAP=RECAP_K3_alpha.01
+  } else if (alpha==.05){RECAP=RECAP_K3_alpha.05
+  } else if (alpha==.1){RECAP=RECAP_K3_alpha.1}
+}
 
 subcategory=sapply(RECAP, '[[', 3)[,1]
 
+index=c("a","b","c","d","e","f","g","h","i")
 for (S in 1:length(subcategory)){
   
-    if (grepl("Hom",subcategory[S])==TRUE){
-      categ="equal sd across groups"
-        if (grepl("bal",subcategory[S])==TRUE){
-          n="equal n"
-          index="a: "
-        } else if (grepl("nN",subcategory[S])==TRUE){
-          n="positive correlation between n and mean"
-          index="b: "
-        } else if (grepl("Nn",subcategory[S])==TRUE){
-          n="negative correlation between n and mean"
-          index="c: "}      
-    
-    } else if (grepl("sdSD",subcategory[S])==TRUE){
-        if (grepl("bal",subcategory[S])==TRUE){
-          categ="positive correlation between sd and mean"
-          n="equal n"
-          index="d: "
-        } else if (grepl("nN",subcategory[S])==TRUE){
-          categ="positive correlation between n and sd"
-          n="positive correlation between sd and mean"
-          index="e: "
-        } else if (grepl("Nn",subcategory[S])==TRUE){
-          categ="negative correlation between n and sd"
-          n="positive correlation between sd and mean"
-          index="f: "}      
-    
-    } else if (grepl("SDsd",subcategory[S])==TRUE) {
-        if (grepl("bal",subcategory[S])==TRUE){
-          categ="negative correlation between sd and mean"
-          n="equal n"
-          index="g: "
-        } else if (grepl("nN",subcategory[S])==TRUE){
-          categ="negative correlation between n and sd"
-          n="negative correlation between sd and mean"
-          index="h: "
-        } else if (grepl("Nn",subcategory[S])==TRUE){
-          categ="positive correlation between n and sd"
-          n="negative correlation between sd and mean"
-          index="i: "}      
-    }
-
-  Title = paste0(index,categ,"\n",n)
-
   par(xpd=FALSE,mar=c(3,4,4,1))  
   pow=NULL
     for (j in 1:length(RECAP)){
@@ -161,7 +142,9 @@ for (S in 1:length(subcategory)){
         YMIN=MIN_Y
         YMAX=YMIN+.3    
       }
-    
+ 
+    setwd("C:/Users/Administrateur/Documents/GITHUB/W-ANOVA/Rmarkdown folder/Rmarkdown inputs")
+    png(file=paste0("Fig2",index[S],".png"),width=2000,height=1700, units = "px", res = 300)
     par(mfrow=c(1,2),oma = c(0, 0, 3, 0))
     plot(1:3,NULL,bty="n",ylim=c(YMIN,YMAX),xaxt="n",main="Power",cex.main=1.2,xlab="",ylab="averaged power",pch=19,type="o",col="white")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
@@ -174,13 +157,17 @@ for (S in 1:length(subcategory)){
       lines(1:3,RECAP[[j]][S,7:9],bty="n",xaxt="n",pch=j,type="o",lty=j)
     }
     abline(h=0,lty=2,lwd=2,col="red")
-  
-    mtext(Title, outer = TRUE, cex = 1.3)
+    dev.off()
     
    } 
 }   
 
-### SEUL COUAC: PNG ET DEV.OFF, ça ne fonctionne pas. 
-graphs(K=2)
-graphs(K=3)
+graphs(K=2,alpha=.01)
+graphs(K=2,alpha=.05)
+graphs(K=2,alpha=.1)
 
+graphs(K=3,alpha=.01)
+graphs(K=3,alpha=.05)
+graphs(K=3,alpha=.1)
+
+getwd()
