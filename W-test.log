@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.2)  22 FEB 2019 20:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.2)  22 FEB 2019 20:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1175,7 +1175,7 @@ Package rerunfilecheck Info: File `W-test.out' has not changed.
 Here is how much of TeX's memory you used:
  13868 strings out of 494562
  209228 string characters out of 6175462
- 292662 words of memory out of 5000000
+ 292702 words of memory out of 5000000
  17122 multiletter control sequences out of 15000+600000
  81920 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1206,7 +1206,7 @@ lmss8.pfb><c:/Users/Administrateur/AppData/Roaming/TinyTeX/texmf-dist/fonts/typ
 e1/public/lm/lmsy10.pfb><c:/Users/Administrateur/AppData/Roaming/TinyTeX/texmf-
 dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/Administrateur/AppData/Roaming/T
 inyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on W-test.pdf (45 pages, 817294 bytes).
+Output written on W-test.pdf (45 pages, 817305 bytes).
 PDF statistics:
  608 PDF objects out of 1000 (max. 8388607)
  496 compressed objects within 5 object streams
