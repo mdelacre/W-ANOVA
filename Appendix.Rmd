@@ -144,33 +144,33 @@ lines(density(M4),lty=6,lwd=2)
 legend(0,.83,legend=c("sd=1","sd=2","sd=4","sd=8"),lty=c(1,2,3,6),lwd=c(2,2,2,2),bty="n",xjust=0.5,yjust=1,horiz=TRUE,xpd=TRUE,cex=1.2)
 ```
  
-#```{r "", echo=FALSE, fig.width = 15,fig.height=8,out.width = '400px',fig.cap = "centered normal right ##skewed robability density function, as a function of the population SD"}
-#n=1000000
-#NP1=rsnorm(n, mean=0, sd=1,xi=10) 
-#NP2=rsnorm(n, mean=0, sd=2,xi=10) 
-#NP3=rsnorm(n, mean=0, sd=4,xi=10)  
-#NP4=rsnorm(n, mean=0, sd=8,xi=10)  
-#par(mai=c(.5,1,.5,1))
-#plot(density(NP1),lty=1,xlim=c(-15,15),ylim=c(0,.7),lwd=2,main="",xlab="",cex.lab=1.2)
-#lines(density(NP2),lty=2,lwd=2)
-#lines(density(NP3),lty=3,lwd=2)
-#lines(density(NP4),lty=6,lwd=2)
-#legend(0,.83,legend=c("sd=1","sd=2","sd=4","sd=8"),lty=c(1,2,3,6),lwd=c(2,2,2,2),bty="n",xjust=0.5,yjust=1,#horiz=TRUE,xpd=TRUE,cex=1.2)
-#```
+```{r "", echo=FALSE, fig.width = 15,fig.height=8,out.width = '400px',fig.cap = "centered normal right skewed robability density function, as a function of the population SD"}
+n=1000000
+NP1=rsnorm(n, mean=0, sd=1,xi=10) 
+NP2=rsnorm(n, mean=0, sd=2,xi=10) 
+NP3=rsnorm(n, mean=0, sd=4,xi=10)  
+NP4=rsnorm(n, mean=0, sd=8,xi=10)  
+par(mai=c(.5,1,.5,1))
+plot(density(NP1),lty=1,xlim=c(-15,15),ylim=c(0,.7),lwd=2,main="",xlab="",cex.lab=1.2)
+lines(density(NP2),lty=2,lwd=2)
+lines(density(NP3),lty=3,lwd=2)
+lines(density(NP4),lty=6,lwd=2)
+legend(0,.83,legend=c("sd=1","sd=2","sd=4","sd=8"),lty=c(1,2,3,6),lwd=c(2,2,2,2),bty="n",xjust=0.5,yjust=1,horiz=TRUE,xpd=TRUE,cex=1.2)
+```
 
-#```{r "", echo=FALSE, fig.width = 15,fig.height=8,out.width = '400px',fig.cap = "centered normal left #skewed probability density function, as a function of the population SD"}
-#n=1000000 
-#NN1=rsnorm(n, mean=0, sd=1,xi=-10) 
-#NN2=rsnorm(n, mean=0, sd=2,xi=-10) 
-#NN3=rsnorm(n, mean=0, sd=4,xi=-10)  
-#NN4=rsnorm(n, mean=0, sd=8,xi=-10)  
-#par(mai=c(.5,1,.5,1))
-#plot(density(NN1),lty=1,xlim=c(-15,15),ylim=c(0,.7),lwd=2,main="",xlab="",cex.lab=1.2)
-#lines(density(NN2),lty=2,lwd=2)
-#lines(density(NN3),lty=3,lwd=2)
-#lines(density(NN4),lty=6,lwd=2)
-#legend(0,.83,legend=c("sd=1","sd=2","sd=4","sd=8"),lty=c(1,2,3,6),lwd=c(2,2,2,2),bty="n",xjust=0.5,yjust=1,#horiz=TRUE,xpd=TRUE,cex=1.2)
-#```
+```{r "", echo=FALSE, fig.width = 15,fig.height=8,out.width = '400px',fig.cap = "centered normal left skewed robability density function, as a function of the population SD"}
+n=1000000
+NN1=rsnorm(n, mean=0, sd=1,xi=-10) 
+NN2=rsnorm(n, mean=0, sd=2,xi=-10) 
+NN3=rsnorm(n, mean=0, sd=4,xi=-10)  
+NN4=rsnorm(n, mean=0, sd=8,xi=-10)  
+par(mai=c(.5,1,.5,1))
+plot(density(NN1),lty=1,xlim=c(-15,15),ylim=c(0,.7),lwd=2,main="",xlab="",cex.lab=1.2)
+lines(density(NN2),lty=2,lwd=2)
+lines(density(NN3),lty=3,lwd=2)
+lines(density(NN4),lty=6,lwd=2)
+legend(0,.83,legend=c("sd=1","sd=2","sd=4","sd=8"),lty=c(1,2,3,6),lwd=c(2,2,2,2),bty="n",xjust=0.5,yjust=1,horiz=TRUE,xpd=TRUE,cex=1.2)
+```
 
 ```{r "", echo=FALSE, fig.width = 15,fig.height=8,out.width = '400px',fig.cap = "chi-squared with 2 degrees of freedom probability density function, as a function of the population SD"}
 n=1000000

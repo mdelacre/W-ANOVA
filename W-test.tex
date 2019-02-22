@@ -301,7 +301,7 @@ In Figure 1 to 5, we computed the average Type I error rate of the three tests u
 \includegraphics[width=400px]{Rmarkdown folder/Rmarkdown inputs/Fig1E} \caption{Type I error rate of the F-test, W-test and F*-test when there are unequal SDs across groups, and negative correlation between sample sizes and SDs (cells f and g in Table 1)}\label{fig:unnamed-chunk-5}
 \end{figure}
 
-In Figure 1 and 2 (cells a, b and c in Table 1), the population variance is equal between all groups, so the homoscedasticity assumption is met. The \emph{F}-test and \emph{F*}-test only marginally deviate from the nominal 5\%, regardless of the underlying distribution and the \emph{SD}-ratio. The \emph{W}-test also only marginally deviates from the nominal 5\%, except under asymmetry (the tests becomes a little more sensitive) or extremely heavy tails (the test becomes a bit more conservative), consistently with observations in Harwell et al. (1992). However, deviations don't exceed the liberal criterion of Bradley (1978).
+In Figures 1 and 2 (cells a, b and c in Table 1), the population variance is equal between all groups, so the homoscedasticity assumption is met. The \emph{F}-test and \emph{F*}-test only marginally deviate from the nominal 5\%, regardless of the underlying distribution and the \emph{SD}-ratio. The \emph{W}-test also only marginally deviates from the nominal 5\%, except under asymmetry (the tests becomes a little more liberal) or extremely heavy tails (the test becomes a bit more conservative), consistently with observations in Harwell et al. (1992). However, deviations don't exceed the liberal criterion of Bradley (1978).
 
 In Figures 3, 4 and 5 (cells d to i, Table 1) the population variance is unequal between groups, so that the homoscedasticity assumption is not met. When sample sizes are equal across groups (Figure 3) and when there is a positive correlation between sample sizes and \emph{SDs} (Figure 4), the Type I error rate of the \emph{W}-test is closer to the nominal 5\% than the Type I error rate of the \emph{F*}-test and the \emph{F}-test, the latter which is consistently at the lower limit of the liberal interval suggested by Bradley, in line with Harwell et al. (1992), Glass et al. (1972), Nimon (2012) and Overall et al. (1995). Heteroscedasticity does not impact the Type I error rate of the \emph{W}-test, regardless of the distribution (the order of the distribution shape remains the same in all conditions).
 
@@ -742,12 +742,16 @@ normal right skewed distribution with a mean of 2 (from the package
 \includegraphics[width=400px]{W-test_files/figure-latex/unnamed-chunk-19-1} \caption{centered mixed normal probability density function, as a function of the population SD}\label{fig:unnamed-chunk-19}
 \end{figure}
 
-\#\texttt{\{r\ "",\ echo=FALSE,\ fig.width\ =\ 15,fig.height=8,out.width\ =\ \textquotesingle{}400px\textquotesingle{},fig.cap\ =\ "centered\ normal\ right\ \#\#skewed\ robability\ density\ function,\ as\ a\ function\ of\ the\ population\ SD"\}\ \#n=1000000\ \#NP1=rsnorm(n,\ mean=0,\ sd=1,xi=10)\ \ \#NP2=rsnorm(n,\ mean=0,\ sd=2,xi=10)\ \ \#NP3=rsnorm(n,\ mean=0,\ sd=4,xi=10)\ \ \ \#NP4=rsnorm(n,\ mean=0,\ sd=8,xi=10)\ \ \ \#par(mai=c(.5,1,.5,1))\ \#plot(density(NP1),lty=1,xlim=c(-15,15),ylim=c(0,.7),lwd=2,main="",xlab="",cex.lab=1.2)\ \#lines(density(NP2),lty=2,lwd=2)\ \#lines(density(NP3),lty=3,lwd=2)\ \#lines(density(NP4),lty=6,lwd=2)\ \#legend(0,.83,legend=c("sd=1","sd=2","sd=4","sd=8"),lty=c(1,2,3,6),lwd=c(2,2,2,2),bty="n",xjust=0.5,yjust=1,\#horiz=TRUE,xpd=TRUE,cex=1.2)\ \#}
-
-\#\texttt{\{r\ "",\ echo=FALSE,\ fig.width\ =\ 15,fig.height=8,out.width\ =\ \textquotesingle{}400px\textquotesingle{},fig.cap\ =\ "centered\ normal\ left\ \#skewed\ probability\ density\ function,\ as\ a\ function\ of\ the\ population\ SD"\}\ \#n=1000000\ \ \#NN1=rsnorm(n,\ mean=0,\ sd=1,xi=-10)\ \ \#NN2=rsnorm(n,\ mean=0,\ sd=2,xi=-10)\ \ \#NN3=rsnorm(n,\ mean=0,\ sd=4,xi=-10)\ \ \ \#NN4=rsnorm(n,\ mean=0,\ sd=8,xi=-10)\ \ \ \#par(mai=c(.5,1,.5,1))\ \#plot(density(NN1),lty=1,xlim=c(-15,15),ylim=c(0,.7),lwd=2,main="",xlab="",cex.lab=1.2)\ \#lines(density(NN2),lty=2,lwd=2)\ \#lines(density(NN3),lty=3,lwd=2)\ \#lines(density(NN4),lty=6,lwd=2)\ \#legend(0,.83,legend=c("sd=1","sd=2","sd=4","sd=8"),lty=c(1,2,3,6),lwd=c(2,2,2,2),bty="n",xjust=0.5,yjust=1,\#horiz=TRUE,xpd=TRUE,cex=1.2)\ \#}
+\begin{figure}
+\includegraphics[width=400px]{W-test_files/figure-latex/unnamed-chunk-20-1} \caption{centered normal right skewed robability density function, as a function of the population SD}\label{fig:unnamed-chunk-20}
+\end{figure}
 
 \begin{figure}
-\includegraphics[width=400px]{W-test_files/figure-latex/unnamed-chunk-20-1} \caption{chi-squared with 2 degrees of freedom probability density function, as a function of the population SD}\label{fig:unnamed-chunk-20}
+\includegraphics[width=400px]{W-test_files/figure-latex/unnamed-chunk-21-1} \caption{centered normal left skewed robability density function, as a function of the population SD}\label{fig:unnamed-chunk-21}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=400px]{W-test_files/figure-latex/unnamed-chunk-22-1} \caption{chi-squared with 2 degrees of freedom probability density function, as a function of the population SD}\label{fig:unnamed-chunk-22}
 \end{figure}
 \end{appendix}
 
