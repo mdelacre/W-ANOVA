@@ -152,14 +152,14 @@ graphs=function(K,yliminf,ylimsup,alpha){
   
   index=c("C","E","D","A","B")
   for (S in 1:length(subcategory)){
-    setwd("C:/Users/Administrateur/Documents/GITHUB/W-ANOVA/Rmarkdown folder/Rmarkdown inputs")
-    png(file=paste0("Fig1",index[S],".png"),width=2000,height=1700, units = "px", res = 300)  
+    setwd("C:/Users/Administrateur/Desktop/Plots W-test")
+    png(file=paste0("Fig1",index[S],", K=",K,", alpha=",alpha,".png"),width=2000,height=1700, units = "px", res = 300)  
     par(xpd=FALSE,mar=c(3,4,4,1))  
     plot(1:3,NULL,bty="n",ylim=c(yliminf,ylimsup),xaxt="n",xlab="",ylab="averaged alpha",pch=7,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
       lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged alpha of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
-    abline(h=0.05,lty=2,lwd=2,col="red")
+    abline(h=alpha,lty=2,lwd=2,col="red")
     
     rect(.5,.5*alpha,3.5,1.5*alpha, col= rgb(0, 0, 0, alpha=.05),border=NA)
     rect(.5,.9*alpha,3.5,1.1*alpha, col= rgb(0, 0, 0, alpha=.25),border=NA)
@@ -167,7 +167,4 @@ graphs=function(K,yliminf,ylimsup,alpha){
   }  
 } 
 
-graphs(K=2,.02,.13,alpha=.05)
-graphs(K=3,.02,.13,alpha=.05) 
-graphs(K=4,.02,.13,alpha=.05)
-graphs(K=5,.02,.13,alpha=.05)
+

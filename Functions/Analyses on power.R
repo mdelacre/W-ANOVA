@@ -140,18 +140,18 @@ for (S in 1:length(subcategory)){
       YMIN=.7
       YMAX=1} else{
         YMIN=MIN_Y
-        YMAX=YMIN+.3    
+        YMAX=YMIN+.3  
       }
 
-    setwd("G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/Power/")
-    png(file=paste0("Fig2",index[S],".png"),width=2000,height=1700, units = "px", res = 300)
+    setwd("C:/Users/Administrateur/Desktop/Plots W-test")
+    png(file=paste0("Fig2",index[S],", K=",K,", alpha=",alpha,".png"),width=2000,height=1700, units = "px", res = 300)
     par(mfrow=c(1,2),oma = c(0, 0, 3, 0))
     plot(1:3,NULL,bty="n",ylim=c(YMIN,YMAX),xaxt="n",main="Power",cex.main=1.2,xlab="",ylab="averaged power",pch=19,type="o",col="white")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
     lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",pch=j,type="o",lty=j)}
 
-    plot(1:3,NULL,bty="n",ylim=c(-.40,.80),xaxt="n",main="Consistency",cex.main=1.2,xlab="",ylab="averaged consistency",pch=19,type="o")
+    plot(1:3,NULL,bty="n",ylim=c(-1,2),xaxt="n",main="Consistency",cex.main=1.2,xlab="",ylab="averaged consistency",pch=19,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
       lines(1:3,RECAP[[j]][S,7:9],bty="n",xaxt="n",pch=j,type="o",lty=j)
