@@ -55,6 +55,11 @@ output:
 library("papaja")
 library("bookdown")
 library("knitr")
+library("bda")
+library("smoothmest")
+library("moments")
+library("fGarch")
+library("dplyr")
 ```
 
 ```{r analysis-preferences}

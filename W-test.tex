@@ -103,7 +103,7 @@ First author performed simulations. First, second and fourth authors contributed
 Correspondence concerning this article should be addressed to Marie Delacre, CP191, avenue F.D. Roosevelt 50, 1050 Bruxelles. E-mail: \href{mailto:marie.delacre@ulb.ac.be}{\nolinkurl{marie.delacre@ulb.ac.be}}}
 
 \abstract{
-Student's \emph{t}-test and classical \emph{F}-test ANOVA rely on the assumptions that two or more samples are independent and that independant and identically distributed residuals are normal and have equal variances between groups. We focus on the assumptions of normality and equality of variances, and argue that these assumptions are often unrealistic in the field of psychology. We underline the current lack of attention to these assumptions through an analysis of researchers' practices. Through Monte Carlo simulations we illustrate the consequences of performing the classic parametric \emph{F}-test for ANOVA when the test assumptions are not met on the Type I error rate and statistical power. Under realistic deviations from the assumption of equal variances the classic \emph{F}-test can yield severely biased results and lead to invalid statistical inferences. We examine two common alternatives to the \emph{F}-test, namely the Welch's ANOVA (\emph{W}-test) and the Brown-Forsythe test (\emph{F*}-test). Our simulations show that the \emph{W}-test is a better alternative and we therefore recommend using the \emph{W}-test by default when comparing means. We provide a detailed example explaining how to perform the \emph{W}-test in SPSS and R. We summarize our conclusions in five practical recommendations that researchers can use to improve their statistical practices.
+Student's \emph{t}-test and classical \emph{F}-test ANOVA rely on the assumptions that two or more samples are independent, and that independent and identically distributed residuals are normal and have equal variances between groups. We focus on the assumptions of normality and equality of variances, and argue that these assumptions are often unrealistic in the field of psychology. We underline the current lack of attention to these assumptions through an analysis of researchers' practices. Through Monte Carlo simulations we illustrate the consequences of performing the classic parametric \emph{F}-test for ANOVA when the test assumptions are not met on the Type I error rate and statistical power. Under realistic deviations from the assumption of equal variances the classic \emph{F}-test can yield severely biased results and lead to invalid statistical inferences. We examine two common alternatives to the \emph{F}-test, namely the Welch's ANOVA (\emph{W}-test) and the Brown-Forsythe test (\emph{F*}-test). Our simulations show that the \emph{W}-test is a better alternative and we therefore recommend using the \emph{W}-test by default when comparing means. We provide a detailed example explaining how to perform the \emph{W}-test in SPSS and R. We summarize our conclusions in five practical recommendations that researchers can use to improve their statistical practices.
 
 
 }
@@ -113,9 +113,9 @@ Student's \emph{t}-test and classical \emph{F}-test ANOVA rely on the assumption
 
 When comparing independent groups researchers often analyze the means by performing a Student's \emph{t}-test or classical Analysis of Variance (ANOVA) \emph{F}-test (Erceg-Hurn \& Mirosevich, 2008; Keselman et al., 1998; Tomarken \& Serlin, 1986). Both tests rely on the assumptions that independent and identically distributed residuals (1) are sampled from a normal distribution and (2) have equal variances between groups (or homoscedasticity; see Lix, Keselman, \& Keselman, 1996). While a deviation from the normality assumption generally does not strongly affect either the Type I error rates (Glass, Peckham, \& Sanders, 1972; Harwell, Rubinstein, Hayes, \& Olds, 1992; Tiku, 1971) or the power of the \emph{F}-test (David \& Johnson, 1951; Harwell et al., 1992; Srivastava, 1959; Tiku, 1971), the \emph{F}-test is not robust against unequal variances (Grissom, 2000). Unequal variances can alter both the Type I error rate (David \& Johnson, 1951; Harwell et al., 1992) and statistical power (Nimon, 2012; Overall, Atlas, \& Gibson, 1995) of the \emph{F}-test.
 
-Although it important to make sure test assumptions are met before a statistical test is performed, researchers rarely provide information about test assumptions when they report an \emph{F}-test. We examined statistical tests reported in 116 articles in the \emph{Journal of Personality and Social Psychology} published in the year 2016. Fourteen percent of these articles reported a One-Way \emph{F}-test, but only one article indicated that the homogeneity of variances assumption was taken into account. They reported corrected degrees of freedom for unequal variances, which could signal the use of the \emph{W}-test instead of the classical \emph{F}-test. A similar investigation (Hoekstra, Kiers, \& Johnson, 2012) yielded conclusions about the lack of attention to both the homoscedasticity and the normality assumptions. Despite the fact that the \emph{F}-test is currently used by default, alternatives exist that are often a better choice, such as the Welch's \emph{W} ANOVA (\emph{W}-test), the Alexander-Govern test, James' second order test, and the Brown-Forsythe ANOVA (\emph{F}*-test). Although not the focus of the current article, additional tests exist that allow researchers to examine hypotheses about other relevant parameters of a distribution than the mean (such as standard deviations and the shape of the distribution (see for example Erceg-Hurn \& Mirosevich, 2008; Wilcox, 1998). However, since most researchers currenty generate hypotheses about differences between means (Erceg-Hurn \& Mirosevich, 2008; Keselman et al., 1998), we think that a first realistic first step towards progress would be to get researchers to correctly test the hypothesis they are used to.
+Although it important to make sure test assumptions are met before a statistical test is performed, researchers rarely provide information about test assumptions when they report an \emph{F}-test. We examined statistical tests reported in 116 articles in the \emph{Journal of Personality and Social Psychology} published in the year 2016. Fourteen percent of these articles reported a One-Way \emph{F}-test, but only one article indicated that the homogeneity of variances assumption was taken into account. They reported corrected degrees of freedom for unequal variances, which could signal the use of the \emph{W}-test instead of the classical \emph{F}-test. A similar investigation (Hoekstra, Kiers, \& Johnson, 2012) yielded conclusions about the lack of attention to both the homoscedasticity and the normality assumptions. Despite the fact that the \emph{F}-test is currently used by default, alternatives that are often a better choice exist, such as the Welch's \emph{W} ANOVA (\emph{W}-test), the Alexander-Govern test, James' second order test, and the Brown-Forsythe ANOVA (\emph{F}*-test). Although not the focus of the current article, additional tests exist that allow researchers to examine hypotheses about other relevant parameters of a distribution than the mean (such as standard deviations and the shape of the distribution (see for example Erceg-Hurn \& Mirosevich, 2008; Wilcox, 1998). However, since most researchers currently generate hypotheses about differences between means (Erceg-Hurn \& Mirosevich, 2008; Keselman et al., 1998), we think that a first realistic first step towards progress would be to get researchers to correctly test the hypothesis they are used to.
 
-Although the debate surrounding the assumptions of the \emph{F}-test has been widely explored (see for example the meta-analysis of Harwell et al., 1992), applied researchers still largely ignore the consequences of assumption violations. Non-mathematical pedagogical papers summarizing the arguments seems to be lacking from the literature, and the current paper aims to fill this gap. We will discuss the pertinence of the assumptions of the \emph{F}-test, and focus on the question of heteroscedasticity (that, as we will see, can have major consequences on error rates). We will provide a non-mathematical explanation of how alternatives to the classical \emph{F}-test cope with heteroscedasticity violations. We conducted simulations in which we compare the \emph{F}-test with the most promising alternatives. We argue that when variances are equal between groups, the \emph{W}-test has nearly the same empirical Type I error rate and power as the \emph{F}-test, but when variances are unequal, it provides empirical Type I and Type II error rates that are closer to the expected levels compared to the \emph{F}-test. Since the \emph{W}-test is available in practically all statistical software packages, researchers can immediately improve their statistical inferences by replacing the \emph{F}-test by the \emph{W}-test.
+Although the debate surrounding the assumptions of the \emph{F}-test has been widely explored (see for example the meta-analysis of Harwell et al., 1992), applied researchers still largely ignore the consequences of assumption violations. Non-mathematical pedagogical papers summarizing the arguments seem to be lacking from the literature, and the current paper aims to fill this gap. We will discuss the pertinence of the assumptions of the \emph{F}-test, and focus on the question of heteroscedasticity (that, as we will see, can have major consequences on error rates). We will provide a non-mathematical explanation of how alternatives to the classical \emph{F}-test cope with heteroscedasticity violations. We conducted simulations in which we compare the \emph{F}-test with the most promising alternatives. We argue that when variances are equal between groups, the \emph{W}-test has nearly the same empirical Type I error rate and power as the \emph{F}-test, but when variances are unequal, it provides empirical Type I and Type II error rates that are closer to the expected levels compared to the \emph{F}-test. Since the \emph{W}-test is available in practically all statistical software packages, researchers can immediately improve their statistical inferences by replacing the \emph{F}-test by the \emph{W}-test.
 
 \hypertarget{normality-and-homogeneity-of-variances-under-ecological-conditions}{%
 \section{Normality and Homogeneity of variances under Ecological Conditions}\label{normality-and-homogeneity-of-variances-under-ecological-conditions}}
@@ -127,7 +127,7 @@ For several reasons, assumptions of homogeneity of variances and normality are a
 
 It has been argued that there are many fields in psychology where the assumption of normality does not hold (Cain, Zhang, \& Yuan, 2017; Micceri, 1989; Yuan, Bentler, \& Chan, 2004). As argued by Micceri (1989), there are several factors that could explain departures from the normality assumption, and we will focus on three of them: treatment effects, the presence of subpopulations, and the bounded measures underlying residuals.
 
-First, while it is obvious that the mean can be changed by the treatment effects, experimental treatment could also change the shape of a distribution, either by influencing the \emph{skewness}, quantifying the asymmetry of the shape of the distribution, and \emph{kurtosis}, a measure of the tendency to produce extreme values. A distribution with positive kurtosis will have heavier tails than the normal distribution, which means that extreme values will be more likely, while a distribution with negative kurtosis will have lighter tails than the normal distribution, meaning that extreme values will be less likely (Westfall, 2014; Wilcox, 2005). For example, a training aiming at reducing a bias perception of threat when being exposed to ambiguous words will not uniformly impact the perception of all participants, depending on their level of anxiety (Grey \& Mathews, 2000). This could influence the kurtosis of the distribution of bias score.
+First, while it is obvious that the mean can be influenced by the treatment effects, experimental treatment could also change the shape of a distribution, either by influencing the \emph{skewness}, quantifying the asymmetry of the shape of the distribution, and \emph{kurtosis}, a measure of the tendency to produce extreme values. A distribution with positive kurtosis will have heavier tails than the normal distribution, which means that extreme values will be more likely, while a distribution with negative kurtosis will have lighter tails than the normal distribution, meaning that extreme values will be less likely (Westfall, 2014; Wilcox, 2005). For example, a training aiming at reducing a bias perception of threat when being exposed to ambiguous words will not uniformly impact the perception of all participants, depending on their level of anxiety (Grey \& Mathews, 2000). This could influence the kurtosis of the distribution of bias score.
 
 Second, prior to any experimental treatment, the presence of several subpopulations may lead to departures from the normality assumptions. Subgroup might exist that are unequal on some characteristics relevant to the measurements, that are not controlled within the studied group, which results in mixed distributions. This unavoidable lack of control is inherent of our field given its complexity. As an illustration, Wilcox (2005) writes that pooling two normally-distributed populations that have the same mean but different variances (e.g.~normally distributed scores for schizophrenic and not schizophrenic participants) could result in distributions that are very similar to the normal curve, but with thicker tails. As another example, when assessing a wellness score for the general population, data may be sampled from a left-skewed distribution, because most people are probably not depressed (see Heun, Burkart, Maier, \& Bech, 1999). In this case, people who suffer from depression and people who do not suffer from depression are part of the same population, which can leads to asymmetry in the distribution.
 
@@ -144,7 +144,7 @@ Second, a quasi-experimental treatment can have different impacts on variances b
 
 Third, even when the variances of groups are the same before treatment (due to a complete succesful randomization in group assignment), unequal variances can emerge later, as a consequence of an experimental treatment (Box, 1954; Bryk \& Raudenbush, 1988; Cumming, 2005; Erceg-Hurn \& Mirosevich, 2008; Keppel \& Wickens, 2004). For example, Koeser and Sczesny (2014) have compared arguments advocating either masculine generic or gender-fair language with control messages in order to test the impact of these conditions on the use of gender-fair wording (measured as a frequency). They report that the standard deviations increase after treatment in all experimental conditions.
 
-Fourth, more often than not, psychological processes are captured in situations where many variables are unidentified and/or left uncontrolled (Cohen et al., 2013). Since some of these variables can act as moderators, they can generate heteroscedasticity. Indeed, by definition, a moderator is a variable that will interact with factors, which implies that the effect of the moderator will be different in one condition of the factor than in another condition of the same factor.
+Fourth, more often than not, psychological processes are captured in situations where many variables are unidentified and/or left uncontrolled (Cohen et al., 2013). Since some of these variables can act as moderators, they can generate heteroscedasticity. Indeed, by definition, a moderator is a variable that will interact with factors, which implies that the effect of the moderator will be different between the several conditions of the same factor.
 
 \hypertarget{consequences-of-assumption-violations.}{%
 \section{Consequences of Assumption Violations.}\label{consequences-of-assumption-violations.}}
@@ -154,13 +154,13 @@ Assumptions violations would not be a matter per se, if the \emph{F}-test was pe
 \hypertarget{violation-of-the-normality-assumption}{%
 \subsection{Violation of the Normality Assumption}\label{violation-of-the-normality-assumption}}
 
-Regarding the Type I error rate, the shape of the distribution has very little impact on the \emph{F}-test (Harwell et al., 1992). When departures are very small (i.e.~a kurtosis between 1.2 and 3 or a skewness between -.4 and .4), the Type I error rate of the \emph{F}-test is very close to expectations, even with very small sample sizes of 11 subjects per group (Hsu \& Feldt, 1969).\\
+Regarding the Type I error rate, the shape of the distribution has very little impact on the \emph{F}-test (Harwell et al., 1992). When departures are very small (i.e.~a kurtosis between 1.2 and 3 or a skewness between -.4 and .4), the Type I error rate of the \emph{F}-test is very close to expectations, even with sample sizes as small as 11 subjects per group (Hsu \& Feldt, 1969).\\
 Regarding the Type II error rate, many authors underlined that departures from normality do not seriously affect the power (Boneau, 1960; David \& Johnson, 1951; Glass et al., 1972; Harwell et al., 1992; Srivastava, 1959; Tiku, 1971). However, we can conclude from Srivastava (1959) and Boneau (1960) that kurtosis has a slightly larger impacts on the power than skewness. The effect of non-normality on power increases when sample sizes are unequal between groups (Glass et al., 1972). Lastly the effect of non-normality decreases when sample sizes increase (Srivastava, 1959).
 
 \hypertarget{violation-of-homogeneity-of-variances-assumption}{%
 \subsection{Violation of Homogeneity of Variances Assumption}\label{violation-of-homogeneity-of-variances-assumption}}
 
-Regarding the Type I error rate, the \emph{F}-test is sensitive to unequal variances (Harwell et al., 1992). More specifically, the more unequal the \emph{SD} of the populations samples are extracted from, the higher the impact. When there are only two groups, the impact is smaller than when there are more than two groups (Harwell et al., 1992). When there are more than two groups, the \emph{F}-test becomes more liberal, meaning that the Type I error rate is larger than the nominal alpha level, even when sample sizes are equal across groups (Tomarken \& Serlin, 1986). Moreover, when sample sizes are unequal, there is a strong effect of the sample size and variance pairing. In case of a positive pairing (i.e.~the group with the larger sample size also has the larger variance), the test is too conservative, meaning that the Type I error rate of the test is lower than the nomnial alpha level, whereas in case of a negative pairing (i.e.~the group with the larger sample size has the smaller variance), the test is too liberal (Glass et al., 1972; Nimon, 2012; Overall et al., 1995; Tomarken \& Serlin, 1986).
+Regarding the Type I error rate, the \emph{F}-test is sensitive to unequal variances (Harwell et al., 1992). More specifically, the more unequal the \emph{SD} of the populations samples are extracted from, the higher the impact. When there are only two groups, the impact is smaller than when there are more than two groups (Harwell et al., 1992). When there are more than two groups, the \emph{F}-test becomes more liberal, meaning that the Type I error rate is larger than the nominal alpha level, even when sample sizes are equal across groups (Tomarken \& Serlin, 1986). Moreover, when sample sizes are unequal, there is a strong effect of the sample size and variance pairing. In case of a positive pairing (i.e.~the group with the larger sample size also has the larger variance), the test is too conservative, meaning that the Type I error rate of the test is lower than the nominal alpha level, whereas in case of a negative pairing (i.e.~the group with the larger sample size has the smaller variance), the test is too liberal (Glass et al., 1972; Nimon, 2012; Overall et al., 1995; Tomarken \& Serlin, 1986).
 
 Regarding the Type II error rate, there is a small impact of unequal variances when sample sizes are equal (Harwell et al., 1992), but there is a strong effect of the sample size and variance pairing (Nimon, 2012; Overall et al., 1995). In case of a positive pairing, the Type II error rate increases (i.e.~the power decreases), and in case of a negative pairing, the Type II error decreases (i.e.~the power increases).
 
@@ -195,7 +195,7 @@ The \emph{F}* statistic proposed by Brown and Forsythe (1974) is computed as fol
 F^*= \frac{\sum_{j=1}^k[n_j(\bar{x_j}-\bar{x_{..}})^2]}{\sum_{j=1}^k [(1-\frac{n_j}{N})s_j^2]}
 \label{eq:BFstat}
 \end{equation}
-Where \(x_j\) and \(s_j^2\) are respectively the group mean and the group variance, and \(\bar{x_{..}}\) is the overall mean. As it can be seen in \eqref{eq:BFstat} the numerator of the \emph{F}* statistic is equal to the sum of squares between groups (which is equal to the numerator of the \emph{F} statistic when one compares two groups). In the denominator, the variance of each group is weighted by 1 minus the relative frequency of each group. This adjustement implies that the variance associated with the group with the smallest sample size is given more weight compared to the \emph{F}-test. As a result, when the larger variance is associated with the larger sample size, \emph{F}* is larger than \emph{F}, because the denominator decreases, leading to more significant findings compared to the \emph{F}-test. On the other hand, when the larger variance is associated with the smaller sample size, \emph{F}* is smaller than \emph{F}, because the denominator increases, leading to fewer significant findings compared to the \emph{F}-test. The degrees of freedom in the numerator and in the denominator of \emph{F}*-test are computed as follows (with the same principle as the denominator computation of the \emph{F*} statistic):
+Where \(x_j\) and \(s_j^2\) are respectively the group mean and the group variance, and \(\bar{x_{..}}\) is the overall mean. As it can be seen in \eqref{eq:BFstat} the numerator of the \emph{F}* statistic is equal to the sum of squares between groups (which is equal to the numerator of the \emph{F} statistic when one compares two groups). In the denominator, the variance of each group is weighted by 1 minus the relative frequency of each group. This adjustment implies that the variance associated with the group with the smallest sample size is given more weight compared to the \emph{F}-test. As a result, when the larger variance is associated with the larger sample size, \emph{F}* is larger than \emph{F}, because the denominator decreases, leading to more significant findings compared to the \emph{F}-test. On the other hand, when the larger variance is associated with the smaller sample size, \emph{F}* is smaller than \emph{F}, because the denominator increases, leading to fewer significant findings compared to the \emph{F}-test. The degrees of freedom in the numerator and in the denominator of \emph{F}*-test are computed as follows (with the same principle as the denominator computation of the \emph{F*} statistic):
 \begin{equation} 
 df_n= k-1
 \label{eq:BFnumDF}
@@ -261,22 +261,22 @@ Table 1.
 \hypertarget{type-i-error-rate-of-the-f-test-w-test-and-f-test}{%
 \subsection{\texorpdfstring{Type I Error Rate of the \emph{F}-test, \emph{W}-test, and \emph{F}*-test}{Type I Error Rate of the F-test, W-test, and F*-test}}\label{type-i-error-rate-of-the-f-test-w-test-and-f-test}}
 
-As previously mentioned, the Type I error rate (\(\alpha\)) is the long run frequency of observing significant results when the null-hypothesis is true. When means are equal across all groups the Type I error rate of all test should be equal to the nominal alpha level. We assessed the Type I error rate of the \emph{F}-test, \emph{W}-test and \emph{F*}-test under 2560 scenarios using a nominal alpha level of 5\%.
+As previously mentioned, the Type I error rate (\(\alpha\)) is the long-run frequency of observing significant results when the null-hypothesis is true. When means are equal across all groups the Type I error rate of all test should be equal to the nominal alpha level. We assessed the Type I error rate of the \emph{F}-test, \emph{W}-test and \emph{F*}-test under 2560 scenarios using a nominal alpha level of 5\%.
 
 When there is no difference between means, the 9 cells of Table 1 simplify into 5 subconditions:
 
 \begin{itemize}
 \tightlist
 \item
-  Equal \emph{n} and \emph{sd} across groups (a)\\
+  Equal \emph{n} and \emph{SD} across groups (a)\\
 \item
-  Unequal \emph{n} but equal \emph{sd} across groups (b and c)\\
+  Unequal \emph{n} but equal \emph{SD} across groups (b and c)\\
 \item
-  Unequal \emph{sd} but equal \emph{n} across groups (d and g)\\
+  Unequal \emph{SD} but equal \emph{n} across groups (d and g)\\
 \item
-  Unequal \emph{n} and \emph{sd} across groups, with positive correlation between \emph{n} and \emph{sd} (e and i)\\
+  Unequal \emph{n} and \emph{SD} across groups, with positive correlation between \emph{n} and \emph{SD} (e and i)\\
 \item
-  Unequal \emph{n} and \emph{sd} across groups, with negative correlation between \emph{n} and \emph{sd} (f and h)
+  Unequal \emph{n} and \emph{SD} across groups, with negative correlation between \emph{n} and \emph{SD} (f and h)
 \end{itemize}
 
 In Figure 1 to 5, we computed the average Type I error rate of the three tests under these 5 subcategories. The light grey area corresponds to the liberal criterion from Bradley (1978), who regards a departure from the nominal alpha level as acceptable whenever the Type I error rate falls within the interval {[}\(.5 \times \alpha\); \(1.5 \times \alpha\){]}. The dark grey area corresponds to the more conservative criterion from which departures from the nominal alpha is considered negligible as long as the Type I error rate falls within the interval {[}\(.9 \times \alpha\); \(1.1 \times \alpha\){]}.
@@ -301,7 +301,7 @@ In Figure 1 to 5, we computed the average Type I error rate of the three tests u
 \includegraphics[width=400px]{Rmarkdown folder/Rmarkdown inputs/Fig1E} \caption{Type I error rate of the F-test, W-test and F*-test when there are unequal SDs across groups, and negative correlation between sample sizes and SDs (cells f and g in Table 1)}\label{fig:unnamed-chunk-5}
 \end{figure}
 
-In Figure 1 and 2 (cells a, b and c in Table 1), the population variance is equal between all groups, so the homoscedasticity assumption is met. The \emph{F}-test and \emph{F*}-test only marginally deviates from the nominal 5\%, regardless of the underlying distribution and the \emph{SD}-ratio. The \emph{W}-tests also only marginally deviates from the nominal 5\%, except under asymmetry (the tests becomes a little more sensitive) or extremely heavy tails (the test becomes a bit more conservative), consistently with observations in Harwell et al. (1992). However, deviations don't exceed the liberal criterion of Bradley (1978).
+In Figure 1 and 2 (cells a, b and c in Table 1), the population variance is equal between all groups, so the homoscedasticity assumption is met. The \emph{F}-test and \emph{F*}-test only marginally deviate from the nominal 5\%, regardless of the underlying distribution and the \emph{SD}-ratio. The \emph{W}-test also only marginally deviates from the nominal 5\%, except under asymmetry (the tests becomes a little more sensitive) or extremely heavy tails (the test becomes a bit more conservative), consistently with observations in Harwell et al. (1992). However, deviations don't exceed the liberal criterion of Bradley (1978).
 
 In Figures 3, 4 and 5 (cells d to i, Table 1) the population variance is unequal between groups, so that the homoscedasticity assumption is not met. When sample sizes are equal across groups (Figure 3) and when there is a positive correlation between sample sizes and \emph{SDs} (Figure 4), the Type I error rate of the \emph{W}-test is closer to the nominal 5\% than the Type I error rate of the \emph{F*}-test and the \emph{F}-test, the latter which is consistently at the lower limit of the liberal interval suggested by Bradley, in line with Harwell et al. (1992), Glass et al. (1972), Nimon (2012) and Overall et al. (1995). Heteroscedasticity does not impact the Type I error rate of the \emph{W}-test, regardless of the distribution (the order of the distribution shape remains the same in all conditions).
 
@@ -374,13 +374,13 @@ When consistency equals zero, the observed power is consistent with the nominal 
 \includegraphics[width=400px]{Rmarkdown folder/Rmarkdown inputs/Fig2i} \caption{Power and consistency of the F-test, W-test and F*-test when there are unequal SDs across groups,positive correlation betwen sample sizes and SDs, and negative correlation between SDs and means (cell i  in Table 1)}\label{fig:unnamed-chunk-14}
 \end{figure}
 
-In Figures 6, 7 and 8 (cells a, b and c in Table 1), the population variance is equal between all groups, meaning that the homoscedasticity assumption is met. When distributions are normal, the \emph{W}-test is slightly less powerful than the \emph{F}-test and \emph{F*}-test, even through differences are very small. With all other distributions, the \emph{W}-test is generally more powerful than the \emph{F*}-test and \emph{F}-test, even with heavy tailed distributions, which is in contrast with previous findings (Wilcox, 1998). Wilcox (1998) concluded that there is a loss of power when means from heavy-tailed distributions (e.g.~double exponential or a mixed normal distribution) are compared to means from normal distributions. This finding is based on the argument that heavy-tailed distributions are associated with bigger standard deviations than normal distributions, and that the effect size for such distributions is therefore smaller (Wilcox, 2011). However, this conclusion is based on a common conflation of kurtosis and the standard deviation, which are completely independent (DeCarlo, 1997). One can find distributions that have similar \emph{SD}'s but different kurtosis (see Appendix 2). However, while the \emph{W}-test is more powerful than the \emph{F}-test and the \emph{F*}-test in many situations,it is a bit less consistent with theoretical expectations than both other tests in the sense that the \emph{W}-test is generally more powerful than expected (especially with high kurtosis, or when asymmetries go in opposite directions). This is due to the fact that the \emph{W}-test is more impacted by the distribution shape, in line with observations by Harwell et al. (1992). Note that differences between \emph{W}-test and other tests, in terms of consistency, are very small.
+In Figures 6, 7 and 8 (cells a, b and c in Table 1), the population variance is equal between all groups, meaning that the homoscedasticity assumption is met. When distributions are normal, the \emph{W}-test is slightly less powerful than the \emph{F}-test and \emph{F*}-test, even through differences are very small. With all other distributions, the \emph{W}-test is generally more powerful than the \emph{F*}-test and \emph{F}-test, even with heavy-tailed distributions, which is in contrast with previous findings (Wilcox, 1998). Wilcox (1998) concluded that there is a loss of power when means from heavy-tailed distributions (e.g.~double exponential or a mixed normal distribution) are compared to means from normal distributions. This finding is based on the argument that heavy-tailed distributions are associated with bigger standard deviations than normal distributions, and that the effect size for such distributions is therefore smaller (Wilcox, 2011). However, this conclusion is based on a common conflation of kurtosis and the standard deviation, which are completely independent (DeCarlo, 1997). One can find distributions that have similar \emph{SD} but different kurtosis (see Appendix 2). However, while the \emph{W}-test is more powerful than the \emph{F}-test and the \emph{F*}-test in many situations,it is a bit less consistent with theoretical expectations than both other tests in the sense that the \emph{W}-test is generally more powerful than expected (especially with high kurtosis, or when asymmetries go in opposite directions). This is due to the fact that the \emph{W}-test is more impacted by the distribution shape, in line with observations by Harwell et al. (1992). Note that differences between \emph{W}-test and other tests, in terms of consistency, are very small.
 
 In Figures 9 to 14 (cells d to i in Table 1), the population variance is unequal between groups, meaning that the homoscedasticity assumption is not met. When sample sizes are equal across groups (Figures 9 and 10), the \emph{F}-test and the \emph{F*}-tests are equally powerful, and have the same consistency, whatever the correlation between the \emph{SD} and the mean. On the other hand, the power of the \emph{W}-test depends on the correlation between the \emph{SD} and the mean (in line with Liu, 2015). When the group with the largest mean has the largest variance (Figure 9), the largest deviation between group means and the general mean is given less weight, and as a consequence the \emph{W}-test is less powerful than both other tests. At the same time, the test is slightly less consistent than both other tests. When the group with the largest mean has the smallest variance (Figure 10), the largest deviation between group means and the general mean is given more weight, and therefore the \emph{W}-test is more powerful than both other tests. The test is also slightly more consistent than both other tests.
 
 When sample sizes are unequal across groups, the power of the \emph{F*}-test and the \emph{F}-test are a function of the correlation between sample sizes and \emph{SDs}. When there is a negative correlation between sample sizes and \emph{SDs} (Figures 11 and 12), the \emph{F}-test is always more powerful than the \emph{F*}-test. Indeed, as was explained in the previous mathematical section, the \emph{F}-test gives more weight to the smallest variance (the statistic is therefore increased) while the \emph{F*}-test gives more weight to the largest variance (the statistic is therefore decreased). Conversely, when there is a positive correlation between sample sizes and \emph{SDs} (Figures 13 and 14), the \emph{F}-test is always more conservative than the F\emph{*}-test, because the \emph{F}-test gives more weight to the largest variance while the \emph{F*}-test gives more weight to the smallest variance.
 
-The power of the \emph{W}-test is not a function of the correlation between sample sizes and \emph{SDs}, but rather a function of the correlation between \emph{SDs} and means. The test is more powerful when there is a negative correlation between \emph{SDs} and means, and less powerful when there is a positive correlation between \emph{SDs} and means. Note that for all tests, the effect of heteroscedasticity is aproximately the same regardless of the shape of the distribution. Moreover, there is one persistent observation in our simulations: whatever the configuration of the \emph{n}-ratio, the consistency of the three tests is closer to zero when there is a negative correlation between the \emph{SD} and the mean (meaning that the group with the higest mean has the lower variance).
+The power of the \emph{W}-test is not a function of the correlation between sample sizes and \emph{SDs}, but rather a function of the correlation between \emph{SDs} and means. The test is more powerful when there is a negative correlation between \emph{SDs} and means, and less powerful when there is a positive correlation between \emph{SDs} and means. Note that for all tests, the effect of heteroscedasticity is approximately the same regardless of the shape of the distribution. Moreover, there is one constant observation in our simulations: whatever the configuration of the \emph{n}-ratio, the consistency of the three tests is closer to zero when there is a negative correlation between the \emph{SD} and the mean (meaning that the group with the highest mean has the lower variance).
 
 We can draw the following conclusions about the statistical power of the three tests:
 
@@ -390,7 +390,7 @@ We can draw the following conclusions about the statistical power of the three t
 \item
   When all assumptions are met, the \emph{W}-test falls slightly behind the \emph{F}-test and the \emph{F*}-test, both in terms of power and consistency.
 \item
-  When variances are equal between groups and distributions are not normal, the \emph{W}-test is slightly more powerful than both the \emph{F}-test and the \emph{F*}-test, even with heavy tailed distributions.
+  When variances are equal between groups and distributions are not normal, the \emph{W}-test is slightly more powerful than both the \emph{F}-test and the \emph{F*}-test, even with heavy-tailed distributions.
 \item
   When the assumption of equal variances is violated, the \emph{F}-test is either too liberal or too conservative, depending on the correlation between sample sizes and \emph{SDs}. On the other side, the \emph{W}-test is not influenced by the sample sizes and \emph{SDs} pairing. However, it is influenced by the \emph{SD} and means pairing.
 \item
@@ -410,9 +410,9 @@ Taking both the effects of the assumption violations on the alpha risk and on th
 \item
   Do not neglect the descriptive analysis of the data. A complete description of the shape and characteristics of the data (e.g.~histograms and boxplots) is important. When at least one statistical parameter relating to the shape of the distribution (e.g.~variance, skewness, kurtosis) seems to vary between groups, comparing results of the \emph{W}-test with results of a nonparametric procedure is useful in order to better understand the data.\\
 \item
-  With small sample sizes (i.e.~less than 50 observations when compare at most four groups, 100 observations when comparing more than four groups), the \emph{W}-test will not control Type I error rate when skewness is present and detecting departures for normality is therefore especially important in small samples. Unless you have good reasons to believe that distributions underlying the data have small kurtosis and skewness, we recommend the use of alternative tests that are not based on means comparison, such as the trimmed means test (Erceg-Hurn \& Mirosevich, 2008) \footnote{The null hypothesis of the trimmed means test assumes that trimmed means are the same between groups. A trimmed mean is a mean computed on data after removing the lowest and highest values of the distribution . Trimmed means and means are equal when data are symmetric. On the other hand, when data are asymmetric, trimmed means and means differ.} or nonparametric tests. For more information, see Erceg-Hurn and Mirosevich (2008).
+  With small sample sizes (i.e.~less than 50 observations when comparing at most four groups, 100 observations when comparing more than four groups), the \emph{W}-test will not control Type I error rate when skewness is present and detecting departures for normality is therefore especially important in small samples. Unless you have good reasons to believe that distributions underlying the data have small kurtosis and skewness, we recommend the use of alternative tests that are not based on means comparison, such as the trimmed means test (Erceg-Hurn \& Mirosevich, 2008) \footnote{The null hypothesis of the trimmed means test assumes that trimmed means are the same between groups. A trimmed mean is a mean computed on data after removing the lowest and highest values of the distribution . Trimmed means and means are equal when data are symmetric. On the other hand, when data are asymmetric, trimmed means and means differ.} or nonparametric tests. For more information, see Erceg-Hurn and Mirosevich (2008).
 \item
-  Perform a-priori power-analyses. Fifty subjects per group are generally enough to control the Type I error rate, but power analyses are still important in order to determine the required sample sizes to achieve sufficient power to detect a statistically significant difference (see Albers \& Lakens, 2018).
+  Perform a-priori power analyses. Fifty subjects per group are generally enough to control the Type I error rate, but power analyses are still important in order to determine the required sample sizes to achieve sufficient power to detect a statistically significant difference (see Albers \& Lakens, 2018).
 \item
   Use balanced designs (i.e.~same sample size in each group) whenever possible. When using the \emph{W}-test, the Type I error rate is a function of criteria such as the skewness of the distributions, and whether skewness is combined with unequal variances and unequal sample sizes between groups. Our simulations show that the Type I error rate control is in general slightly better with balanced designs.
 \end{enumerate}
@@ -581,10 +581,10 @@ Yuan, K.-H., Bentler, P. M., \& Chan, W. (2004). Structural equation modeling wi
 \setlength{\parindent}{0.0in}
 \setlength{\leftskip}{0.0in}
 
-\hypertarget{the-mathematical-development-of-the-f-test-w-test-and-f-test-numerical-example}{%
-\subsection{\texorpdfstring{The Mathematical Development of the
-\emph{F}-test, \emph{W}-test, and \emph{F}*-test: Numerical
-Example}{The Mathematical Development of the F-test, W-test, and F*-test: Numerical Example}}\label{the-mathematical-development-of-the-f-test-w-test-and-f-test-numerical-example}}
+\hypertarget{appendix-1-the-mathematical-development-of-the-f-test-w-test-and-f-test-numerical-example}{%
+\subsection{\texorpdfstring{Appendix 1: The Mathematical Development of
+the \emph{F}-test, \emph{W}-test, and \emph{F}*-test: Numerical
+Example}{Appendix 1: The Mathematical Development of the F-test, W-test, and F*-test: Numerical Example}}\label{appendix-1-the-mathematical-development-of-the-f-test-w-test-and-f-test-numerical-example}}
 
 A summary is presented in Table A1. The complete example is available on
 Github. The DV is a score that can vary from 0 to 40. The IV is a
@@ -659,6 +659,96 @@ biggest variance. As previously mentioned, it means that the
 decreases. The \emph{F}*-test will also be a little too conservative,
 even if the test is less affected than the \emph{F}-test. As a
 consequence: \emph{W} \textgreater{} \emph{F}* \textgreater{} \emph{F}.
+
+\hypertarget{appendix-2-justification-for-the-choice-of-distributions-in-simulations}{%
+\subsection{Appendix 2: Justification for the choice of distributions in
+simulations}\label{appendix-2-justification-for-the-choice-of-distributions-in-simulations}}
+
+The set of simulations described in the article was repeated for 7
+distributions. We used R commands to generate data from different
+distributions:
+
+\begin{itemize}
+\item
+\emph{k} normal distributions (Figure A1): in order to assess the Type
+I error rate and power of the different tests under the assumption of
+normality, data were generated by means of the function ``rnorm''
+(from the package ``stats''; ``R: The Normal Distribution,'' 2016).
+\item
+\emph{k} double exponential distributions (Figure A2): In order to
+assess the impact of high kurtosis on the Type I error rate and power
+of all tests, data were generated by means of the function
+``rdoublex'' (from the package ``smoothmest''; ``R: The double
+exponential (Laplace) distribution,'' 2012).
+\item
+\emph{k} mixed normal distributions (Figure A3): In order to assess
+the impact of extremely high kurtosis on the Type I error rate and
+power of all tests, regardless of variance, data were generated by
+means of the function ``rmixnorm'' (from the package ``bda''; Wang \&
+Wang, 2015).
+\item
+\emph{k} normal right skewed distributions (Figure A4): In order to
+assess the impact of moderate skewness on the Type I error rate and
+power, data were generated by means of the function ``rsnorm'' (from
+the package ``fGarch''; ``R: Skew Normal Distribution,'' 2017). The
+normal skewed distribution was chosen because it is the only skewed
+distribution where the standard deviation ratio can vary without
+having an impact on skewness.
+\item
+\emph{k}-1 normal left skewed distributions (Figure A5) and 1 normal
+right skewed distribution (Figure A2.4): In order to assess the impact
+of unequal shapes, in terms of skewness, on the Type I error rate and
+power, when data have moderate skewness, data were generated by means
+of the functions ``rsnorm'' (from the package ``fGarch''; ``R: Skew
+Normal Distribution,'' 2017).
+\item
+\emph{k}-1 chi-squared distributions with two degrees of freedom (See
+Figure A6), and one normal rigt skewed distribution (Figure A2.4): In
+order to assess the impact of high asymetry on the Type I error rate
+an power, k-1 distributions were generated by means of the functions
+``rchisq'' (``R: The (non-central) Chi-squared Distribution,'' 2016).
+The last distribution was generated by means of ``rsnorm'' in order to
+follow a normal right skewed distribution with a mean of 2 (from the
+package ``fGarch''; ``R: Skew Normal Distribution,'' 2017). Because
+the chi-squared is non-negative, it is not possible to generate
+chi-squared where population SD= 1, 4 or 8 and population mean is the
+same than the chi-squared with two degrees of freedom. However, we
+wanted to assess the impact of different SD-ratio on Type I error
+rate. For these reasons, the last distribution was generated by means
+of ``rsnorm'' in order to follow a normal skewed distribution with
+positive skewness of +0.99 and mean = 2 (from the package ``fGarch'';
+``R: Skew Normal Distribution,'' 2017).
+\item
+\emph{k}-1 chi-squared distributions with two degrees of freedom (See
+Figure A6), and one normal left skewed distribution (Figure A5): In
+order to assess the impact of unequal shapes, in terms of skewness, on
+Type I error rate and power when distributions have extreme skewness,
+k-1 distributions were generated by means of the functions ``rchisq''
+(``R: The (non-central) Chi-squared Distribution,'' 2016). The last
+distribution was generated by means of ``rsnorm'' in order to follow a
+normal right skewed distribution with a mean of 2 (from the package
+``fGarch''; ``R: Skew Normal Distribution,'' 2017)
+\end{itemize}
+
+\begin{figure}
+\includegraphics[width=400px]{W-test_files/figure-latex/unnamed-chunk-17-1} \caption{centered normal probability density function, as a function of the population SD}\label{fig:unnamed-chunk-17}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=400px]{W-test_files/figure-latex/unnamed-chunk-18-1} \caption{centered double exponential probability density function, as a function of the population SD}\label{fig:unnamed-chunk-18}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=400px]{W-test_files/figure-latex/unnamed-chunk-19-1} \caption{centered mixed normal probability density function, as a function of the population SD}\label{fig:unnamed-chunk-19}
+\end{figure}
+
+\#\texttt{\{r\ "",\ echo=FALSE,\ fig.width\ =\ 15,fig.height=8,out.width\ =\ \textquotesingle{}400px\textquotesingle{},fig.cap\ =\ "centered\ normal\ right\ \#\#skewed\ robability\ density\ function,\ as\ a\ function\ of\ the\ population\ SD"\}\ \#n=1000000\ \#NP1=rsnorm(n,\ mean=0,\ sd=1,xi=10)\ \ \#NP2=rsnorm(n,\ mean=0,\ sd=2,xi=10)\ \ \#NP3=rsnorm(n,\ mean=0,\ sd=4,xi=10)\ \ \ \#NP4=rsnorm(n,\ mean=0,\ sd=8,xi=10)\ \ \ \#par(mai=c(.5,1,.5,1))\ \#plot(density(NP1),lty=1,xlim=c(-15,15),ylim=c(0,.7),lwd=2,main="",xlab="",cex.lab=1.2)\ \#lines(density(NP2),lty=2,lwd=2)\ \#lines(density(NP3),lty=3,lwd=2)\ \#lines(density(NP4),lty=6,lwd=2)\ \#legend(0,.83,legend=c("sd=1","sd=2","sd=4","sd=8"),lty=c(1,2,3,6),lwd=c(2,2,2,2),bty="n",xjust=0.5,yjust=1,\#horiz=TRUE,xpd=TRUE,cex=1.2)\ \#}
+
+\#\texttt{\{r\ "",\ echo=FALSE,\ fig.width\ =\ 15,fig.height=8,out.width\ =\ \textquotesingle{}400px\textquotesingle{},fig.cap\ =\ "centered\ normal\ left\ \#skewed\ probability\ density\ function,\ as\ a\ function\ of\ the\ population\ SD"\}\ \#n=1000000\ \ \#NN1=rsnorm(n,\ mean=0,\ sd=1,xi=-10)\ \ \#NN2=rsnorm(n,\ mean=0,\ sd=2,xi=-10)\ \ \#NN3=rsnorm(n,\ mean=0,\ sd=4,xi=-10)\ \ \ \#NN4=rsnorm(n,\ mean=0,\ sd=8,xi=-10)\ \ \ \#par(mai=c(.5,1,.5,1))\ \#plot(density(NN1),lty=1,xlim=c(-15,15),ylim=c(0,.7),lwd=2,main="",xlab="",cex.lab=1.2)\ \#lines(density(NN2),lty=2,lwd=2)\ \#lines(density(NN3),lty=3,lwd=2)\ \#lines(density(NN4),lty=6,lwd=2)\ \#legend(0,.83,legend=c("sd=1","sd=2","sd=4","sd=8"),lty=c(1,2,3,6),lwd=c(2,2,2,2),bty="n",xjust=0.5,yjust=1,\#horiz=TRUE,xpd=TRUE,cex=1.2)\ \#}
+
+\begin{figure}
+\includegraphics[width=400px]{W-test_files/figure-latex/unnamed-chunk-20-1} \caption{chi-squared with 2 degrees of freedom probability density function, as a function of the population SD}\label{fig:unnamed-chunk-20}
+\end{figure}
 \end{appendix}
 
 
