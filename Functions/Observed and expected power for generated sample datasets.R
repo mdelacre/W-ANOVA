@@ -3,11 +3,11 @@ library(stringr)
 power=function(alpha){
 
   # Defining all subsections containing RDS files
-  Mainfolder="F:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/Data files/All simulations/With effect/"
+  Mainfolder="G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/Data files/All simulations/With effect/"
   subfolder1=list.files(Mainfolder)
   subfolder2=list.files(paste0(Mainfolder,subfolder1[1]))
   subfolders=expand.grid(subfolder1,subfolder2)
-  subsection=paste0(subfolders[,1],"/",subfolders[,2])
+  subsection=paste0(subfolders[,1],"/",subfolders[,2]) 
   
   for (j in 1:length(subsection)){ 
   target_section=paste0(Mainfolder,subsection[j])
@@ -96,10 +96,12 @@ power=function(alpha){
     rm(A)
       }
 
-setwd("F:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate")
+setwd("G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate")
 write.table(results,paste0(results[1,1]," when k= ",results[1,2]," and alpha= ",alpha,".txt"),sep=";",dec=",")  
 rm(results)
     }
 }
 
 power(alpha=.05)
+power(alpha=.01)
+power(alpha=.10)

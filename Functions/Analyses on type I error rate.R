@@ -1,12 +1,3 @@
-files_path="G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/alpha/"
-setwd(files_path)
-files=list.files(files_path)
-
-files_k2=files[grepl("k= 2",files)==TRUE]
-files_k3=files[grepl("k= 3",files)==TRUE] 
-files_k4=files[grepl("k= 4",files)==TRUE] 
-files_k5=files[grepl("k= 5",files)==TRUE] 
-
 # Codes for subcategories
 # Hom vs. sdSD vs. SDsd 
 ##### Hom = homoscedasticity 
@@ -20,12 +11,45 @@ files_k5=files[grepl("k= 5",files)==TRUE]
 
 RECAP=NULL
 
-summary=function(K){
+summary=function(K,alpha){
   
-  if (K==2){files=files_k2
-  } else if (K==3){files=files_k3
-  } else if (K==4){files=files_k4
-  } else if (K==5){files=files_k5}
+  files_path="G:/Welch's W ANOVA/ANOVA's Welch/Outputs of simulations/statistics_power and type 1 error rate/alpha/"
+  setwd(files_path)
+  allfiles=list.files(files_path)
+  
+  if (K==2){
+    Files=allfiles[grepl("k= 2",allfiles)==TRUE]
+    if(alpha==0.05){
+      files=Files[grepl("alpha= 0.05",Files)==TRUE]
+    } else if (alpha==0.01){
+      files=Files[grepl("alpha= 0.01",Files)==TRUE]
+    } else if (alpha==0.1){
+      files=Files[grepl("alpha= 0.1",Files)==TRUE]}
+  } else if (K==3){
+    Files=allfiles[grepl("k= 3",allfiles)==TRUE]
+    if(alpha==0.05){
+      files=Files[grepl("alpha= 0.05",Files)==TRUE]
+    } else if (alpha==0.01){
+      files=Files[grepl("alpha= 0.01",Files)==TRUE]
+    } else if (alpha==0.1){
+      files=Files[grepl("alpha= 0.1",Files)==TRUE]}
+  }  else if (K==4){
+    Files=allfiles[grepl("k= 4",allfiles)==TRUE]
+    if(alpha==0.05){
+      files=Files[grepl("alpha= 0.05",Files)==TRUE]
+    } else if (alpha==0.01){
+      files=Files[grepl("alpha= 0.01",Files)==TRUE]
+    } else if (alpha==0.1){
+      files=Files[grepl("alpha= 0.1",Files)==TRUE]}
+  }  else if (K==5){
+    Files=allfiles[grepl("k= 5",allfiles)==TRUE]
+    if(alpha==0.05){
+      files=Files[grepl("alpha= 0.05",Files)==TRUE]
+    } else if (alpha==0.01){
+      files=Files[grepl("alpha= 0.01",Files)==TRUE]
+    } else if (alpha==0.1){
+      files=Files[grepl("alpha= 0.1",Files)==TRUE]}
+  }
   
   for (i in 1:length(files)){
     
@@ -80,10 +104,21 @@ summary=function(K){
   cat(capture.output(print(RECAP), file=paste0("alpha RECAP, K=",K,".txt")))
 }
 
-RECAP_K2=summary(K=2)
-RECAP_K3=summary(K=3)
-RECAP_K4=summary(K=4)
-RECAP_K5=summary(K=5) 
+RECAP_K2_alpha.01=summary(K=2,alpha=.01)
+RECAP_K2_alpha.05=summary(K=2,alpha=.05)
+RECAP_K2_alpha.10=summary(K=2,alpha=.1)
+
+RECAP_K3_alpha.01=summary(K=3,alpha=.01)
+RECAP_K3_alpha.05=summary(K=3,alpha=.05)
+RECAP_K3_alpha.10=summary(K=3,alpha=.1)
+
+RECAP_K4_alpha.01=summary(K=4,alpha=.01)
+RECAP_K4_alpha.05=summary(K=4,alpha=.05)
+RECAP_K4_alpha.10=summary(K=4,alpha=.1)
+
+RECAP_K5_alpha.01=summary(K=5,alpha=.01)
+RECAP_K5_alpha.05=summary(K=5,alpha=.05)
+RECAP_K5_alpha.10=summary(K=5,alpha=.1)
 
 ############################## Graphics ############################## 
 
@@ -93,55 +128,50 @@ plot(1:3,RECAP[[1]][1,4:6],bty="n",xaxt="n",yaxt="n",ylim=c(.62,.67),main="",xla
 legend("center", legend=c("Chi-square and normal Left-skewed","Chi-square and normal Righ-skewed","Double exponential","Mixed normal","Normal","Normal Right-skewed and Normal Left-skewed","Normal right-skewed"),
        lty=1:7,pch=1:7,cex=1.1)
 
-
 graphs=function(K,yliminf,ylimsup,alpha){
   
-  if (K==2){RECAP=RECAP_K2
-  } else if (K==3){RECAP=RECAP_K3
-  } else if (K==4){RECAP=RECAP_K4
-  } else if (K==5){RECAP=RECAP_K5}
+  if (K==2){
+    if(alpha==.01){RECAP=RECAP_K2_alpha.01
+    } else if (alpha==.05){RECAP=RECAP_K2_alpha.05
+    } else if (alpha==.1){RECAP=RECAP_K2_alpha.10}
+  } else if (K==3){
+    if(alpha==.01){RECAP=RECAP_K3_alpha.01
+    } else if (alpha==.05){RECAP=RECAP_K3_alpha.05
+    } else if (alpha==.1){RECAP=RECAP_K3_alpha.10}
+  } else if (K==4){
+    if(alpha==.01){RECAP=RECAP_K4_alpha.01
+    } else if (alpha==.05){RECAP=RECAP_K4_alpha.05
+    } else if (alpha==.1){RECAP=RECAP_K4_alpha.10}
+  } else if (K==5){
+    if(alpha==.01){RECAP=RECAP_K5_alpha.01
+    } else if (alpha==.05){RECAP=RECAP_K5_alpha.05
+    } else if (alpha==.1){RECAP=RECAP_K5_alpha.10}
+  }
   
   subcategory=sapply(RECAP, '[[', 3)[,1]
   
-  ##
-  ## CHANGER LE NOM DES GRAPHIQUES
-  ##
-  
+  index=c("C","E","D","A","B")
   for (S in 1:length(subcategory)){
-    if (grepl("Hom",subcategory[S])==TRUE){
-      categ="equal sd across groups"
-      if (grepl("unbal",subcategory[S])==TRUE){n="unequal n"
-      } else if (grepl("bal",subcategory[S])==TRUE){n="equal n"}
-      
-    } else if (grepl("Het",subcategory[S])==TRUE){
-        categ="unequal sd across groups"
-        if (grepl("bal",subcategory[S])==TRUE){n="equal n"
-        } else if (grepl("negativecor",subcategory[S])==TRUE){n="negative correlation between n and sd"
-        } else if (grepl("positivecor",subcategory[S])==TRUE){n="positive correlation between n and sd"}
-    }
-      
-    Title = paste0("Averaged Type I error rate of 3 tests: ","\n",categ,"\n",n)
-    
-    par(xpd=FALSE,mar=c(3,3,4,1))  
-    
-    #png(file = paste0("Observed alpha, condition " ,subcategory[S]," when K=",K,".png"), width = 800, height = 700) 
-    plot(1:3,NULL,bty="n",ylim=c(yliminf,ylimsup),xaxt="n",main=Title,xlab="",ylab="averaged alpha",pch=7,type="o")
+    setwd("C:/Users/Administrateur/Desktop/Plots W-test")
+    png(file=paste0("Fig1",index[S],", K=",K,", alpha=",alpha,".png"),width=2000,height=1700, units = "px", res = 300)  
+    par(xpd=FALSE,mar=c(3,4,4,1))  
+    plot(1:3,NULL,bty="n",ylim=c(yliminf,ylimsup),xaxt="n",xlab="",ylab="averaged Type I error rate",pch=7,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
       lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged alpha of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
-    abline(h=0.05,lty=2,lwd=2,col="red")
+    abline(h=alpha,lty=2,lwd=2,col="red")
     
     rect(.5,.5*alpha,3.5,1.5*alpha, col= rgb(0, 0, 0, alpha=.05),border=NA)
     rect(.5,.9*alpha,3.5,1.1*alpha, col= rgb(0, 0, 0, alpha=.25),border=NA)
-    
-    #dev.off()
+    dev.off()
   }  
-  
 } 
- 
 
-### SEUL COUAC: PNG ET DEV.OFF, ça ne fonctionne pas. 
-graphs(K=2,.02,.13,alpha=.05)
-graphs(K=3,.02,.13,alpha=.05) 
-graphs(K=4,.02,.13,alpha=.05)
-graphs(K=5,.02,.13,alpha=.05)
+getwd()
+graphs(K=3,.02,.12,alpha=.05)
+
+(K,yliminf,ylimsup,alpha)
+
+
+graphs(K=4,.02,.15,alpha=.05)
+graphs(K=5,.02,.15,alpha=.05)
