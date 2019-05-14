@@ -151,7 +151,7 @@ for (S in 1:length(subcategory)){
     for (j in 1:length(RECAP)){ 
     lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",pch=j,type="o",lty=j)}
 
-    plot(1:3,NULL,bty="n",ylim=c(-1,2),xaxt="n",main="Consistency",cex.main=1.2,xlab="",ylab="averaged consistency",pch=19,type="o")
+    plot(10:11,NULL,bty="n",ylim=c(-1,3),xaxt="n",main="Consistency",cex.main=1.2,xlab="",ylab="averaged consistency",pch=19,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
       lines(1:3,RECAP[[j]][S,7:9],bty="n",xaxt="n",pch=j,type="o",lty=j)

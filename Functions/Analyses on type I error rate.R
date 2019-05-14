@@ -34,7 +34,7 @@ summary=function(K,alpha){
     } else if (alpha==0.1){
       files=Files[grepl("alpha= 0.1",Files)==TRUE]}
   }  else if (K==4){
-    Files=allfiles[grepl("k= 3",allfiles)==TRUE]
+    Files=allfiles[grepl("k= 4",allfiles)==TRUE]
     if(alpha==0.05){
       files=Files[grepl("alpha= 0.05",Files)==TRUE]
     } else if (alpha==0.01){
@@ -42,7 +42,7 @@ summary=function(K,alpha){
     } else if (alpha==0.1){
       files=Files[grepl("alpha= 0.1",Files)==TRUE]}
   }  else if (K==5){
-    Files=allfiles[grepl("k= 3",allfiles)==TRUE]
+    Files=allfiles[grepl("k= 5",allfiles)==TRUE]
     if(alpha==0.05){
       files=Files[grepl("alpha= 0.05",Files)==TRUE]
     } else if (alpha==0.01){
@@ -155,7 +155,7 @@ graphs=function(K,yliminf,ylimsup,alpha){
     setwd("C:/Users/Administrateur/Desktop/Plots W-test")
     png(file=paste0("Fig1",index[S],", K=",K,", alpha=",alpha,".png"),width=2000,height=1700, units = "px", res = 300)  
     par(xpd=FALSE,mar=c(3,4,4,1))  
-    plot(1:3,NULL,bty="n",ylim=c(yliminf,ylimsup),xaxt="n",xlab="",ylab="averaged alpha",pch=7,type="o")
+    plot(1:3,NULL,bty="n",ylim=c(yliminf,ylimsup),xaxt="n",xlab="",ylab="averaged Type I error rate",pch=7,type="o")
     axis(side=1,1:3,c("F-test","W-test","F*-test"))
     for (j in 1:length(RECAP)){ 
       lines(1:3,RECAP[[j]][S,4:6],bty="n",xaxt="n",main="Averaged alpha of 3 tests when n and sd are equal across groups",pch=j,type="o",lty=j)}
@@ -167,4 +167,11 @@ graphs=function(K,yliminf,ylimsup,alpha){
   }  
 } 
 
+getwd()
+graphs(K=3,.02,.12,alpha=.05)
 
+(K,yliminf,ylimsup,alpha)
+
+
+graphs(K=4,.02,.15,alpha=.05)
+graphs(K=5,.02,.15,alpha=.05)

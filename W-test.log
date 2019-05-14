@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.2)  22 FEB 2019 20:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2019.1.2)  14 MAY 2019 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -975,138 +975,141 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 143.
 
-Underfull \vbox (badness 1975) has occurred while \output is active []
+Underfull \vbox (badness 1796) has occurred while \output is active []
 
-[7]
-Underfull \vbox (badness 1436) has occurred while \output is active []
+[7] [8] [9] [10] [11] [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[8] [9] [10] [11] [12] [13] [14]
-<Rmarkdown folder/Rmarkdown inputs/legend.png, id=180, 441.90094pt x 300.3722pt
+[13] [14]
+<Rmarkdown folder/Rmarkdown inputs/legend.png, id=185, 441.90094pt x 300.3722pt
 >
 File: Rmarkdown folder/Rmarkdown inputs/legend.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/legend.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/legend.png  used on 
-input line 259.
+input line 262.
 (pdftex.def)             Requested size: 401.52362pt x 272.9266pt.
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 272.
+[15 <./Rmarkdown folder/Rmarkdown inputs/Legend.png>]
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 275.
 
 
 (c:/Users/Administrateur/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr
 .fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [15 <./Rmarkdown folder/Rmarkdown inputs/Legend.png>]
-<Rmarkdown folder/Rmarkdown inputs/Fig1A.png, id=189, 481.8pt x 409.53pt>
+)
+<Rmarkdown folder/Rmarkdown inputs/Fig1A.png, id=193, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig1A.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig1A.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig1A.png  used on i
-nput line 286.
+nput line 289.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig1B.png, id=190, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig1B.png, id=194, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig1B.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig1B.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig1B.png  used on i
-nput line 290.
+nput line 293.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig1C.png, id=191, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig1C.png, id=195, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig1C.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig1C.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig1C.png  used on i
-nput line 294.
+nput line 297.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig1D.png, id=192, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig1D.png, id=196, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig1D.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig1D.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig1D.png  used on i
-nput line 298.
+nput line 301.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig1E.png, id=193, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig1E.png, id=197, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig1E.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig1E.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig1E.png  used on i
-nput line 302.
+nput line 305.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
 [16]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [17 <./Rmarkdown folder/Rmarkdown inputs/Fig1A.png>] [18 <./Rmarkdown folder/Rm
-arkdown inputs/Fig1B.png>] [19 <./Rmarkdown folder/Rmarkdown inputs/Fig1C.png>]
-
+arkdown inputs/Fig1B.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[20 <./Rmarkdown folder/Rmarkdown inputs/Fig1D.png>]
-<Rmarkdown folder/Rmarkdown inputs/Fig2a.png, id=229, 481.8pt x 409.53pt>
+[19 <./Rmarkdown folder/Rmarkdown inputs/Fig1C.png>] [20 <./Rmarkdown folder/Rm
+arkdown inputs/Fig1D.png>]
+Underfull \vbox (badness 1975) has occurred while \output is active []
+
+[21 <./Rmarkdown folder/Rmarkdown inputs/Fig1E.png>]
+<Rmarkdown folder/Rmarkdown inputs/Fig2a.png, id=241, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig2a.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig2a.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig2a.png  used on i
-nput line 343.
+nput line 346.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig2b.png, id=230, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig2b.png, id=242, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig2b.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig2b.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig2b.png  used on i
-nput line 347.
+nput line 350.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig2c.png, id=231, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig2c.png, id=243, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig2c.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig2c.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig2c.png  used on i
-nput line 351.
+nput line 354.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig2d.png, id=232, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig2d.png, id=244, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig2d.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig2d.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig2d.png  used on i
-nput line 355.
+nput line 358.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig2e.png, id=233, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig2e.png, id=245, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig2e.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig2e.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig2e.png  used on i
-nput line 359.
+nput line 362.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig2f.png, id=234, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig2f.png, id=246, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig2f.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig2f.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig2f.png  used on i
-nput line 363.
+nput line 366.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig2g.png, id=235, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig2g.png, id=247, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig2g.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig2g.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig2g.png  used on i
-nput line 367.
+nput line 370.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig2h.png, id=236, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig2h.png, id=248, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig2h.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig2h.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig2h.png  used on i
-nput line 371.
+nput line 374.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-<Rmarkdown folder/Rmarkdown inputs/Fig2i.png, id=237, 481.8pt x 409.53pt>
+<Rmarkdown folder/Rmarkdown inputs/Fig2i.png, id=249, 481.8pt x 409.53pt>
 File: Rmarkdown folder/Rmarkdown inputs/Fig2i.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/Fig2i.png>
 Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/Fig2i.png  used on i
-nput line 375.
+nput line 378.
 (pdftex.def)             Requested size: 401.51126pt x 341.28456pt.
-[21 <./Rmarkdown folder/Rmarkdown inputs/Fig1E.png>] [22 <./Rmarkdown folder/Rm
-arkdown inputs/Fig2a.png>]
+[22 <./Rmarkdown folder/Rmarkdown inputs/Fig2a.png>] [23 <./Rmarkdown folder/Rm
+arkdown inputs/Fig2b.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[23 <./Rmarkdown folder/Rmarkdown inputs/Fig2b.png>] [24 <./Rmarkdown folder/Rm
-arkdown inputs/Fig2c.png>]
+[24 <./Rmarkdown folder/Rmarkdown inputs/Fig2c.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[25 <./Rmarkdown folder/Rmarkdown inputs/Fig2d.png>]
+[25 <./Rmarkdown folder/Rmarkdown inputs/Fig2d.png>] [26 <./Rmarkdown folder/Rm
+arkdown inputs/Fig2e.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[26 <./Rmarkdown folder/Rmarkdown inputs/Fig2e.png>] [27 <./Rmarkdown folder/Rm
-arkdown inputs/Fig2f.png>] [28 <./Rmarkdown folder/Rmarkdown inputs/Fig2g.png>]
-[29 <./Rmarkdown folder/Rmarkdown inputs/Fig2h.png>]
+[27 <./Rmarkdown folder/Rmarkdown inputs/Fig2f.png>] [28 <./Rmarkdown folder/Rm
+arkdown inputs/Fig2g.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[30 <./Rmarkdown folder/Rmarkdown inputs/Fig2i.png>] [31] [32] [33] [34] [35] [
-36] [37]
-<Rmarkdown folder/Rmarkdown inputs/TableA1.png, id=426, 343.2825pt x 154.5775pt
+[29 <./Rmarkdown folder/Rmarkdown inputs/Fig2h.png>] [30 <./Rmarkdown folder/Rm
+arkdown inputs/Fig2i.png>] [31] [32] [33] [34] [35] [36] [37]
+<Rmarkdown folder/Rmarkdown inputs/TableA1.png, id=429, 343.2825pt x 154.5775pt
 >
 File: Rmarkdown folder/Rmarkdown inputs/TableA1.png Graphic file (type png)
 <use Rmarkdown folder/Rmarkdown inputs/TableA1.png>
@@ -1117,42 +1120,42 @@ Package pdftex.def Info: Rmarkdown folder/Rmarkdown inputs/TableA1.png  used on
 
 
  <./Rmarkdown folder/Rmarkdown inputs/TableA1.PNG>] [39] [40] [41]
-<W-test_files/figure-latex/unnamed-chunk-18-1.pdf, id=449, 1084.05pt x 578.16pt
+<W-test_files/figure-latex/unnamed-chunk-18-1.pdf, id=452, 1084.05pt x 578.16pt
 >
 File: W-test_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 <use W-test_files/figure-latex/unnamed-chunk-18-1.pdf>
 Package pdftex.def Info: W-test_files/figure-latex/unnamed-chunk-18-1.pdf  used
  on input line 719.
 (pdftex.def)             Requested size: 401.50575pt x 214.1364pt.
-<W-test_files/figure-latex/unnamed-chunk-19-1.pdf, id=450, 1084.05pt x 578.16pt
+<W-test_files/figure-latex/unnamed-chunk-19-1.pdf, id=453, 1084.05pt x 578.16pt
 >
 File: W-test_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pdf)
 <use W-test_files/figure-latex/unnamed-chunk-19-1.pdf>
 Package pdftex.def Info: W-test_files/figure-latex/unnamed-chunk-19-1.pdf  used
  on input line 723.
 (pdftex.def)             Requested size: 401.50575pt x 214.1364pt.
-<W-test_files/figure-latex/unnamed-chunk-20-1.pdf, id=451, 1084.05pt x 578.16pt
+<W-test_files/figure-latex/unnamed-chunk-20-1.pdf, id=454, 1084.05pt x 578.16pt
 >
 File: W-test_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 <use W-test_files/figure-latex/unnamed-chunk-20-1.pdf>
 Package pdftex.def Info: W-test_files/figure-latex/unnamed-chunk-20-1.pdf  used
  on input line 727.
 (pdftex.def)             Requested size: 401.50575pt x 214.1364pt.
-<W-test_files/figure-latex/unnamed-chunk-21-1.pdf, id=452, 1084.05pt x 578.16pt
+<W-test_files/figure-latex/unnamed-chunk-21-1.pdf, id=455, 1084.05pt x 578.16pt
 >
 File: W-test_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
 <use W-test_files/figure-latex/unnamed-chunk-21-1.pdf>
 Package pdftex.def Info: W-test_files/figure-latex/unnamed-chunk-21-1.pdf  used
  on input line 731.
 (pdftex.def)             Requested size: 401.50575pt x 214.1364pt.
-<W-test_files/figure-latex/unnamed-chunk-22-1.pdf, id=453, 1084.05pt x 578.16pt
+<W-test_files/figure-latex/unnamed-chunk-22-1.pdf, id=456, 1084.05pt x 578.16pt
 >
 File: W-test_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
 <use W-test_files/figure-latex/unnamed-chunk-22-1.pdf>
 Package pdftex.def Info: W-test_files/figure-latex/unnamed-chunk-22-1.pdf  used
  on input line 735.
 (pdftex.def)             Requested size: 401.50575pt x 214.1364pt.
-<W-test_files/figure-latex/unnamed-chunk-23-1.pdf, id=454, 1084.05pt x 578.16pt
+<W-test_files/figure-latex/unnamed-chunk-23-1.pdf, id=457, 1084.05pt x 578.16pt
 >
 File: W-test_files/figure-latex/unnamed-chunk-23-1.pdf Graphic file (type pdf)
 <use W-test_files/figure-latex/unnamed-chunk-23-1.pdf>
@@ -1170,16 +1173,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 744.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 744.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 744.
 Package rerunfilecheck Info: File `W-test.out' has not changed.
-(rerunfilecheck)             Checksum: 957B7718B53BE28B7DF435399BA1EAF5;5325.
+(rerunfilecheck)             Checksum: C747C53368ADBFB8C20F23015B2D7984;5570.
  ) 
 Here is how much of TeX's memory you used:
- 13868 strings out of 494562
- 209228 string characters out of 6175462
- 292702 words of memory out of 5000000
- 17122 multiletter control sequences out of 15000+600000
+ 13871 strings out of 494562
+ 209313 string characters out of 6175462
+ 291761 words of memory out of 5000000
+ 17124 multiletter control sequences out of 15000+600000
  81920 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 43i,11n,47p,1834b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,11n,47p,1903b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/Users/Administrateur/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/l
 m/lm-ts1.enc}{c:/Users/Administrateur/AppData/Roaming/TinyTeX/texmf-dist/fonts/
 enc/dvips/lm/lm-mathsy.enc}{c:/Users/Administrateur/AppData/Roaming/TinyTeX/tex
@@ -1206,10 +1209,10 @@ lmss8.pfb><c:/Users/Administrateur/AppData/Roaming/TinyTeX/texmf-dist/fonts/typ
 e1/public/lm/lmsy10.pfb><c:/Users/Administrateur/AppData/Roaming/TinyTeX/texmf-
 dist/fonts/type1/public/lm/lmsy6.pfb><c:/Users/Administrateur/AppData/Roaming/T
 inyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on W-test.pdf (45 pages, 817305 bytes).
+Output written on W-test.pdf (45 pages, 797114 bytes).
 PDF statistics:
- 608 PDF objects out of 1000 (max. 8388607)
- 496 compressed objects within 5 object streams
- 170 named destinations out of 1000 (max. 500000)
- 247 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 611 PDF objects out of 1000 (max. 8388607)
+ 499 compressed objects within 5 object streams
+ 171 named destinations out of 1000 (max. 500000)
+ 255 words of extra memory for PDF output out of 10000 (max. 10000000)
 
