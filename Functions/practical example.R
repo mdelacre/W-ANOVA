@@ -17,3 +17,10 @@ shapiro.test(database$DV[database$IV==1]) # W=0.95365; p = .09 --> NRH0
 shapiro.test(database$DV[database$IV==2]) # W=0.93191; p = .1503 --> NRH0
 shapiro.test(database$DV[database$IV==3]) # W=0.96785; p = .462 --> NRH0
 
+#------------------------------------------------------------
+                  Performing a W-test
+#------------------------------------------------------------
+
+#oneway.test(dv.name ~ iv.name, data=data.name, var.equal=FALSE)
+
+oneway.test(DV ~ IV, data=database, var.equal=FALSE)
